@@ -1,0 +1,93 @@
+
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Hero/>
+		<Navigation/>
+		<slot />
+		<Footer/>
+	</body>
+</html>
+<style is:global>
+
+	@font-face {
+		font-family: 'Noto Sans Regular';
+		src: url('/assets/fonts/NotoSans/NotoSansDisplay-Regular.ttf') format('truetype');
+	}
+
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--large-font: clamp(1.5rem, 5vw, 2.5rem);
+		--normal-font: clamp(1rem, 4vw, 1.5rem);
+		--small-font: clamp(0.75rem, 3vw, 1rem);
+	}
+	html {
+		font-family: 'Noto Sans Regular', sans-serif;
+		background-color: #F6F6F6;
+	}
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+
+	.column {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.column > * {
+		margin-inline: 1rem;
+	}
+
+	.stack {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.spacer {
+		margin: 1rem;
+	}
+
+	@media (min-width: 768px) {
+		.column {
+			flex-direction: row;
+			margin: auto;
+			text-align: center;
+			justify-content: center;
+
+			& > * {
+				margin: 0 1rem;
+				align-items: center;
+				justify-content: center;
+			}
+
+			footer_column {
+				display: -moz-inline-grid;
+				display: inline-grid;
+			}
+
+		}
+	}
+</style>

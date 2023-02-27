@@ -1,0 +1,121 @@
+---
+
+
+export interface Props {
+	title: string;
+	body: string;
+	href: string;
+}
+
+const fullRoute = Astro.request.url;
+
+const route = fullRoute.split('/')[
+	fullRoute.split('/').length - 1
+] || '';
+
+console.log({
+	route,
+	fullRoute,
+});
+
+---
+
+<nav>
+	<ul>
+		<li>
+			<a href="/" class="nav_link">
+				Home
+			</a>
+		</li>
+		<li>
+			<a href="/blog" class="nav_link">
+				Blog
+			</a>
+		</li>
+		<li>
+			<a href="/packages" class="nav_link">
+				Packages
+			</a>
+		</li>
+		</ul>
+</nav>
+
+<style>
+
+	nav {
+		display: flex;
+		justify-content: flex-end;
+		display: flex;
+		flex-direction: row;
+		// No bullet
+		list-style: none;  
+		background-color: inherit;
+	}
+
+	nav a + a {
+		margin-left: 1rem;
+	}
+
+	.selected {
+		color: red;
+		pointer-events: none;
+	}
+
+  nav:first-child {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 101;
+  }
+
+  nav > * {
+    /* Add space between items */
+    margin: 1rem;
+    position: relative;
+    z-index: 1001;
+  }
+
+  nav > ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  nav > ul > li {
+    list-style: none;
+    font-size: clamp(1rem, 5vw, 1.5rem);
+  }
+
+  nav > ul > li:current {
+    // White text, black square background
+    color: white;
+    background-color: black;
+    margin: 1rem;
+  }
+
+  nav > ul > li:hover {
+    // White text, black square background
+    background-color: white;
+  }
+
+  .nav_scrolled {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 101;
+    background-color: white;
+  }
+
+  .nav_link {
+    color: base.$primary;
+    text-decoration: none;
+  }
+
+  .nav_link:active a {
+    color: base.$secondary;
+    background-color: #0070f3;
+  }
+
+</style>

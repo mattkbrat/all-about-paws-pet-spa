@@ -1,0 +1,28 @@
+---
+import { Image } from '@astrojs/image/components';
+
+const src = '/assets/images/hero.png';
+---
+
+<div class="hero">
+    <div class="Image"/>
+</div>
+
+<style>
+    .Image {
+
+    }
+
+    .hero {
+        background: url('/assets/images/hero.png') center/cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: clamp(300px, 50vh, 500px);
+        width: 100vw;
+        background-color: #d3d4cf;
+        flex-direction: column;
+    }
+</style>

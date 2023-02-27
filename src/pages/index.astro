@@ -1,0 +1,206 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+			<p>
+			  {` `}
+			  All About Paws Pet Spa LLC.
+			  is a locally owned business providing full-service grooming for dogs and
+			  cats. My core belief is that every animal is unique and requires
+			  customized treatment. While many pets come in with tails wagging in
+			  happy anticipation of being groomed, others are more anxious. For this
+			  reason, I always spend a few minutes "meeting" your pet and helping them
+			  get to know me before I start grooming.
+			  <br />
+			  <br />
+			  Kindness, understanding, knowledge, and experience are the keys to great
+			  grooming, so I go out of my way to treat every animal with gentleness
+			  and respect - the way I treat my own pets. As I have 20 plus years in
+			  the professional grooming industry, you can rest assured your beloved
+			  pet will be in good hands.
+			  <br />
+			  <br />
+			  Call to hear more about All About Paws, or just come on over to say,
+			  "Hello!"
+			</p>
+			<h2>benefits of regular bathing &#38; Grooming</h2>
+			<div class={'three_column_equal'}>
+			  {/* <div class={column}>
+						  <h3>Healthy skin and coat. Less shedding!</h3>
+	  
+	  
+						  <h3>Less stress of having to lift and struggle to get your pet into the bathtub</h3>
+						  
+						  <h3>
+							  Trimmed nails are safer for your pet and you. Also the floor!
+						  </h3>
+	  
+						  <h3>
+							  Decreased amount of matting
+						  </h3>   
+	  
+						  <h3>
+							  Your pet will look and smell great
+						  </h3>
+	  
+						  <h3>
+							  Potential health risks may be spotted before they become major complications
+						  </h3>
+	  
+						  <h3>
+							  Pet becomes accustomed to being bathed. This leads to more enjoyment from the experience!
+						  </h3>
+					  </div>
+					  <div class={column}>
+					  <p>
+						  Regular bathing and grooming helps to remove dead hair and skin cells, which can cause shedding. It also helps to keep the skin and coat healthy, which can reduce shedding.
+					  </p>
+					  <p>
+						  Regular bathing and grooming will help keep your pet's nails short and safe. Long nails can be painful for your pet and can cause them to scratch you or the floor.
+					  </p>
+					  <p>
+						  Regular grooming will help keep your pet's coat tangle free. This will make brushing easier and keep your pet looking great.
+					  </p>
+					  <p>
+						  Regular grooming will keep your pet looking and smelling great. This will make you feel good about your pet and will make your pet more enjoyable to be around.
+					  </p>
+					  <p>
+						  Regular grooming will allow your groomer to spot potential health risks before they become major problems. This will help keep your pet healthy and happy.
+					  </p>
+					  <p>
+						  Regular bathing will help your pet become accustomed to the experience. This will make your pet more comfortable and will make the experience more enjoyable for both of you.
+					  </p>
+					  </div> */}
+			  <table class={'table'}>
+				<tr>
+				  <th class={'table_header'}>
+					Benefits of Regular Bathing &#38; Grooming
+				  </th>
+				  <th class={'table_header'}>What it means for you</th>
+				</tr>
+				<tr class={'table_row'}>
+				  <td>Healthy skin and coat. Less shedding!</td>
+				  <td>
+					Regular bathing and grooming helps to remove dead hair and skin
+					cells, which can cause shedding. It also helps to keep the skin
+					and coat healthy, which can reduce shedding.
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+					Less stress of having to lift and struggle to get your pet into
+					the bathtub
+				  </td>
+				  <td>
+					Regular bathing and grooming will help keep your pet's nails short
+					and safe. Long nails can be painful for your pet and can cause
+					them to scratch you or the floor.
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+					Trimmed nails are safer for your pet and you. Also the floor!
+				  </td>
+				  <td>
+					Regular grooming will help keep your pet's coat tangle free. This
+					will make brushing easier and keep your pet looking great.
+				  </td>
+				</tr>
+				<tr>
+				  <td>Decreased amount of matting</td>
+				  <td>
+					Regular grooming will keep your pet looking and smelling great.
+					This will make you feel good about your pet and will make your pet
+					more enjoyable to be around.
+				  </td>
+				</tr>
+				<tr>
+				  <td>Your pet will look and smell great</td>
+				  <td>
+					Regular grooming will allow your groomer to spot potential health
+					risks before they become major problems. This will help keep your
+					pet healthy and happy.
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+					Potential health risks may be spotted before they become major
+					complications
+				  </td>
+				  <td>
+					Regular bathing will allow the groomer to get to know your pet and
+					able to spot any potential health risks before they become major
+					problems. This will help keep your pet healthy and happy.
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+					Pet becomes accustomed to being bathed. This leads to more
+					enjoyment from the experience!
+				  </td>
+				  <td>
+					Regular bathing will help your pet become accustomed to the
+					experience. This will make your pet more comfortable and will make
+					the experience more enjoyable for both of you.
+				  </td>
+				</tr>
+			  </table>
+			</div>
+	  
+			{/* Move above content to a table format */}
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: clamp(300px, 90%, 800px);
+	}
+
+	h1 {
+		font-size: var(--large-font)
+		font-weight: 800;
+		margin: 0;
+	}
+
+
+	h2 {
+		font-size: calc(var(--large-font) * 0.8);
+		border-bottom: 1px solid #494948;
+		/* Uppercase */
+		text-transform: uppercase;
+	}
+
+main > p {
+  font-size: var(--normal-font);
+  color: #494948;
+  line-height: 1.5;
+  text-justify: newspaper;
+  text-align: justify;
+}
+
+main > p > a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+main > p > a:hover,
+main > p > a:focus,
+main > p > a:active {
+  text-decoration: underline;
+}
+
+table {
+	font-size: var(--normal-font);
+}
+
+td {
+	padding: 1rem;
+}
+
+
+</style>
