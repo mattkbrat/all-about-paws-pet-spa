@@ -38,13 +38,15 @@ import Hero from '../components/Hero.astro';
 	:root {
 		--accent: 124, 58, 237;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-		--large-font: clamp(1.5rem, 5vw, 2.5rem);
-		--normal-font: clamp(1rem, 4vw, 1.5rem);
-		--small-font: clamp(0.75rem, 3vw, 1rem);
+		--large-font: clamp(1.5rem, 2.5vw, 2.5rem);
+		--normal-font: clamp(1rem, 2.5vw, 1.5rem);
+		--small-font: clamp(0.75rem, 2.5vw, 1rem);
 	}
 	html {
 		font-family: 'Noto Sans Regular', sans-serif;
-		background-color: #F6F6F6;
+		background-color: #efece9;
+		color: #1a1a1a;
+		/* font-size: 150%; */
 	}
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
@@ -66,10 +68,61 @@ import Hero from '../components/Hero.astro';
 		align-items: center;
 	}
 
+	.flex {
+		display: flex;
+	}
+
+
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-gap: 1rem;
+	}
+
 	.spacer {
 		margin: 1rem;
 	}
 
+	.frame {
+		border: 1px solid #1a1a1a;
+		border-radius: 0.5rem;
+		padding: 1rem;
+	}
+
+	.center {
+		text-align: center;
+	}
+
+	.no-bullets {
+		list-style: none;
+	}
+
+	.accent {
+		background-color: #f9d1c6;
+	}
+
+	.align-right {
+		text-align: right;
+	}
+
+	.align-left {
+		text-align: left;
+	}
+
+	.align-center {
+		text-align: center;
+	}
+
+	.disclaimer {
+		font-size: 0.75rem;
+	}
+
+	.subheading {
+		font-size: 115%;
+
+	}
+
+	
 	@media (min-width: 768px) {
 		.column {
 			flex-direction: row;
