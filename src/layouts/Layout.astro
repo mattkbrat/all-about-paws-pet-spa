@@ -22,8 +22,8 @@ import Hero from '../components/Hero.astro';
 		<title>{title}</title>
 	</head>
 	<body>
-		<Hero/>
 		<Navigation/>
+		<Hero/>
 		<slot />
 		<Footer/>
 	</body>
@@ -33,6 +33,11 @@ import Hero from '../components/Hero.astro';
 	@font-face {
 		font-family: 'Noto Sans Regular';
 		src: url('/assets/fonts/NotoSans/NotoSansDisplay-Regular.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'Noto Sans Condensed';
+		src: url('/assets/fonts/NotoSans/NotoSansDisplay_Condensed-Light.ttf') format('truetype');
 	}
 
 	:root {
@@ -120,6 +125,28 @@ import Hero from '../components/Hero.astro';
 	.subheading {
 		font-size: 115%;
 
+	}
+
+	.faq {
+		text-align: left;
+	}
+
+	.faq a {
+		font-size: var(--normal-font);
+		text-decoration: none;
+		color: #1a1a1a;
+		margin-top: 1rem;
+		border-top: #1a1a1a;
+		border-width: 1px;
+		letter-spacing: 0.1rem;
+	}
+
+	.faq p::first-letter {
+		/* bold first character */
+		font-weight: 400;
+		/* text effect */
+		font-size: 120%;
+		line-height: 1;
 	}
 
 	
