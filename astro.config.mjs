@@ -12,5 +12,5 @@ export default defineConfig({
         configFile: './tailwind.config.js',
     }), preact()],
     output: 'server',
-    adapter: cloudflare(),
+    adapter: cloudflare({ mode: "directory" }),
 });
