@@ -44,11 +44,12 @@ const Header = ({GOOGLE_DIRECTION_URL}: {GOOGLE_DIRECTION_URL: string}) => {
     const Nav = () => {
         return (
             <ul class={'flex space-y-2 flex-col sm:flex-row text-right self-center w-min md:w-full'}>
+                <li class={'hidden'}/>
                 <li id="home" class={`w-full sm:w-auto nav_link ${route === '/' ? 'active' : ''} `}>
                     <a href="/" class="nav_link">Home</a>
                 </li>
 
-                <li id="packages" class={` w-full sm:w-auto nav_link ${route === '/packages' ? 'active' : ''} `}>
+                <li id="packages" class={`w-full h-full sm:w-auto nav_link ${route === '/packages' ? 'active' : ''} `}>
                     <a href="/packages" class="nav_link">Packages</a>
                 </li>
                 <li id="faq" class={`w-full sm:w-auto nav_link ${route === '/faq' ? 'active' : ''} `}>
