@@ -9,6 +9,8 @@ const Header = ({GOOGLE_DIRECTION_URL}: {GOOGLE_DIRECTION_URL: string}) => {
 
     const [scrolled, setScrolled] = useState(false);
 
+    const [isSmall, setIsSmall] = useState(false);
+
     useEffect(() => {
         if (typeof window === "undefined") return;
         setRoute(window.location.pathname);
@@ -18,13 +20,22 @@ const Header = ({GOOGLE_DIRECTION_URL}: {GOOGLE_DIRECTION_URL: string}) => {
     useEffect(() => {
         if (typeof window === "undefined") return;
 
+        setIsSmall(window.innerWidth < 640);
+
         window.addEventListener("scroll", () => {
             setScrolled(window.scrollY > 50);
+        });
+
+        window.addEventListener('resize', () => {
+            setIsSmall(window.innerWidth < 640);
         });
 
         return () => {
             window.removeEventListener("scroll", () => {
                 setScrolled(window.scrollY > 50);
+            });
+            window.removeEventListener('resize', () => {
+                setIsSmall(window.innerWidth < 640);
             });
         }
 
@@ -84,36 +95,51 @@ const Header = ({GOOGLE_DIRECTION_URL}: {GOOGLE_DIRECTION_URL: string}) => {
                     </div>
                 </a>
 
+
+                {/*clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;*/}
                 <div
                     style={{
                         background: menuOpen ? 'rgba(0,0,0,0.6)' : 'transparent',
                     }}
-                    id={'nav-mobile'} class="text-white absolute right-0 top-0 mr-4 mt-4 sm:hidden flex flex-col text-right bg-gray-light">
+                    id={'nav-mobile'}
+                    class={'flex sm:hidden text-white flex-col'}
+                >
 
-                    <button
-                        onClick={() => setMenuOpen(!menuOpen)}
-                        class={'flex w-full flex-row justify-end items-center text-right'}
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="icon icon-tabler icon-tabler-menu-2"
-                            width="44"
-                            height="44"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke={
-                                menuOpen ? 'white' : 'black'
-                            }
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <path stroke="none" d="M0 0h24v24H0z"/>
-                            <line x1="4" y1="6" x2="20" y2="6"/>
-                            <line x1="4" y1="12" x2="20" y2="12"/>
-                            <line x1="4" y1="18" x2="20" y2="18"/>
-                        </svg>
-                    </button>
+                    {
+                        isSmall && (
+                            <button
+                                onClick={() => setMenuOpen(!menuOpen)}
+                                class={'sm:hidden flex flex-row justify-end items-center text-right'}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-menu-2"
+                                    width="44"
+                                    height="44"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke={
+                                        menuOpen ? 'white' : 'black'
+                                    }
+                                    fill="none"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path stroke="none" d="M0 0h24v24H0z"/>
+                                    <line x1="4" y1="6" x2="20" y2="6"/>
+                                    <line x1="4" y1="12" x2="20" y2="12"/>
+                                    <line x1="4" y1="18" x2="20" y2="18"/>
+                                </svg>
+                            </button>
+                        )
+                    }
+
                     {
                         menuOpen && <Nav/>
                     }

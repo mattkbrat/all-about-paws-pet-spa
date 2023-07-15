@@ -1,6 +1,14 @@
 export default {
     content: ['./src/**/*.{html,js,tsx,astro}'],
     theme: {
+        screens:{
+            'sm': '640px',
+            'md': '768px',
+            'lg': '1024px',
+            'xl': '1280px',
+            '2xl': '1536px',
+            '3xl': '1920px'
+        },
 
         colors: {
             'blue': '#1fb6ff',
@@ -27,12 +35,7 @@ export default {
             borderRadius: {
                 '4xl': '2rem',
             },
-            screens: {
-                '3xl': '1600px',
-                '4xl': '2000px',
-                '5xl': '2400px',
-                '6xl': '2800px',
-            }
+
         }
     },
 }
