@@ -20,10 +20,10 @@
             </svg>
         </a>
 
-        <section class='w-full flex flex-col md:grid-cols-3 grid-cols-1 md:grid my-4 text-center items-center'>
-            <section>
+        <section class='w-full space-y-6 md:space-y-0 place-content-between flex flex-col md:flex-row my-4 text-center items-center'>
+            <section class="w-full">
                 <h3>Hours</h3>
-                <table class="w-full inline self-center">
+                <table class="inline self-center">
                     <tr>
                         <td>M - F</td>
                         <td>7:00am - 4:00pm</td>
@@ -38,22 +38,21 @@
                     </tr>
                 </table>
             </section>
-            <section>
+            <section class="w-full">
                 <h3>Location</h3>
                 <p>16329 County Road V</p>
                 <p>Fort Morgan, CO</p>
                 <p>80701</p>
             </section>
-            <section class="w-full text-center">
+            <section class="w-full">
                 <h3>Contact</h3>
-                <p>Phone:
-                    {import.meta.env.PHONE}
-                </p>
-                <div></div>
+                <a href=`tel:+${import.meta.env.PHONE.replace(/\D/g, '')}`>
+                    Call me at {import.meta.env.PHONE}
+                </a>
                 <p>
                     {`Email: `}
                     <a
-                            href={"mailto://" + import.meta.env.CONTACT_EMAIL}
+                            href={"mailto:" + import.meta.env.CONTACT_EMAIL}
                     >
                         {import.meta.env.CONTACT_EMAIL_SPACED}
                     </a>
