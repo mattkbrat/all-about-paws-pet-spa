@@ -1,184 +1,104 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import React from "preact/compat";
 ---
 
 <Layout title="All About Paws">
-	<main>
-			<p>
-			  {` `}
-			  All About Paws Pet Spa LLC.
-			  is a locally owned business providing full-service grooming for dogs and
-			  cats. My core belief is that every animal is unique and requires
-			  customized treatment. While many pets come in with tails wagging in
-			  happy anticipation of being groomed, others are more anxious. For this
-			  reason, I always spend a few minutes "meeting" your pet and helping them
-			  get to know me before I start grooming.
-			  <br />
-			  <br />
-			  Kindness, understanding, knowledge, and experience are the keys to great
-			  grooming, so I go out of my way to treat every animal with gentleness
-			  and respect - the way I treat my own pets. As I have 20 plus years in
-			  the professional grooming industry, you can rest assured your beloved
-			  pet will be in good hands.
-			  <br />
-			  <br />
-			  Call to hear more about All About Paws, or just come on over to say,
-			  "Hello!"
-			</p>
-			<h2>benefits of regular bathing &#38; Grooming</h2>
+    <h2>
+        All About Paws Pet Spa LLC
+    </h2>
+    <div
+            class="flex space-x-9 md:flex-row flex-col-reverse md:space-x-0 md:space-y-4 md:items-center md:justify-center"
+    >
 
-			<div class={'three_column_equal'}>
-			  <table class={'table'}>
-				<tr>
-				  <th class={'table_header'}>
-					Benefits of Regular Bathing &#38; Grooming
-				  </th>
-				  <th class={'table_header'}>What it means for you</th>
-				</tr>
-				<tr class={'table_row'}>
-				  <td>Healthy skin and coat. Less shedding!</td>
-				  <td>
-					Regular bathing and grooming helps to remove dead hair and skin
-					cells, which can cause shedding. It also helps to keep the skin
-					and coat healthy, which can reduce shedding.
-				  </td>
-				</tr>
-				<tr>
-				  <td colspan='2' class='center'>
-					<img
-						class='frame'
-						src="/assets/images/sitting_dog.png"
-						alt=""
-						width={520}
-						height={350}
-					/>
-				</td>
-				</tr>
-				<tr>
-				  <td>
-					Less stress of having to lift and struggle to get your pet into
-					the bathtub
-				  </td>
-				  <td>
-					Regular bathing and grooming will help keep your pet's nails short
-					and safe. Long nails can be painful for your pet and can cause
-					them to scratch you or the floor.
-				  </td>
-				</tr>
-				<tr>
-				  <td>
-					Trimmed nails are safer for your pet and you. Also the floor!
-				  </td>
-				  <td>
-					Regular grooming will help keep your pet's coat tangle free. This
-					will make brushing easier and keep your pet looking great.
-				  </td>
-				</tr>
-				<tr>
-				  <td>Decreased amount of matting</td>
-				  <td>
-					Regular grooming will keep your pet looking and smelling great.
-					This will make you feel good about your pet and will make your pet
-					more enjoyable to be around.
-				  </td>
-				</tr>
-				<tr>
-					<td colspan='2' class='center'>
-						<img
-							class='frame'
-							src="/assets/images/sitting_cat.png"
-							alt=""
-							width={520}
-						/>
-					</td>
-				</tr>
-				<tr>
-				  <td>Your pet will look and smell great</td>
-				  <td>
-					Regular grooming will allow your groomer to spot potential health
-					risks before they become major problems. This will help keep your
-					pet healthy and happy.
-				  </td>
-				</tr>
-				<tr>
-				  <td>
-					Potential health risks may be spotted before they become major
-					complications
-				  </td>
-				  <td>
-					Regular bathing will allow the groomer to get to know your pet and
-					able to spot any potential health risks before they become major
-					problems. This will help keep your pet healthy and happy.
-				  </td>
-				</tr>
-				<tr>
-				  <td>
-					Pet becomes accustomed to being bathed. This leads to more
-					enjoyment from the experience!
-				  </td>
-				  <td>
-					Regular bathing will help your pet become accustomed to the
-					experience. This will make your pet more comfortable and will make
-					the experience more enjoyable for both of you.
-				  </td>
-				</tr>
-			  </table>
-			</div>
-	  
-			{/* Move above content to a table format */}
-	</main>
+        <p class="w-full md:mr-4">
+            {` `}
+            All About Paws Pet Spa LLC.
+            is a locally owned business providing full-service grooming for dogs and
+            cats. My core belief is that every animal is unique and requires
+            customized treatment. While many pets come in with tails wagging in
+            happy anticipation of being groomed, others are more anxious. For this
+            reason, I always spend a few minutes "meeting" your pet and helping them
+            get to know me before I start grooming.
+            <br/>
+            <br/>
+            Kindness, understanding, knowledge, and experience are the keys to great
+            grooming, so I go out of my way to treat every animal with gentleness
+            and respect - the way I treat my own pets. As I have 20 plus years in
+            the professional grooming industry, you can rest assured your beloved
+            pet will be in good hands.
+            <br/>
+            <br/>
+            Call to hear more about All About Paws, or just come on over to say,
+            "Hello!"
+        </p>
+
+        <aside
+                class="flex md:h-full flex-row md:flex-col justify-center
+                border-b-2 border-gray-200 md:border-b-0 md:border-l-2 items-center
+                mb-2 md:mb-0 space-y-0 md:space-y-6 w-full md:w-auto
+                 "
+                style={{ marginLeft: '0 !important',}}
+        >
+            <a
+                    target="_blank"
+                    referrerpolicy={'no-referrer'}
+                    class="sm:text-center md:text-left items-center content-center nav_link text-sm w-full"
+
+                    href={import.meta.env.GOOGLE_REVIEWS_URL}
+            >
+                Reviews
+            </a>
+            <a
+                    target="_blank"
+                    referrerpolicy={'no-referrer'}
+                    class="sm:text-center md:text-left items-center content-center nav_link text-sm w-full"
+
+                    href={import.meta.env.GOOGLE_WRITE_REVIEW}
+            >
+                Write a Review
+            </a>
+
+            <div
+                class="w-full h-px border-b-2 border-b-gray-dark hidden md:block border-dashed">
+                <br/>
+            </div>
+
+            <iframe
+                    class="hidden md:block"
+                    sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-modals" aria-label="Map, 16329 Co Rd V" src="https://maps-api-ssl.google.com/maps?hl=en&amp;ll=40.305269,-103.844805&amp;output=embed&amp;q=16329+Co+Rd+V,+Fort+Morgan,+CO+80701,+USA+(16329+Co+Rd+V)&amp;z=16" allowfullscreen="" />
+            <a
+                    class="sm:text-center md:text-left items-center content-center nav_link text-sm w-full"
+                    href={import.meta.env.GOOGLE_DIRECTION_URL}
+                    target="_blank"
+                    referrerpolicy={'no-referrer'}
+            >
+                Get Directions
+            </a>
+
+
+        </aside>
+
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4 grid-cols-1 items-center">
+
+        <h2 class="col-span-3">benefits of regular bathing &#38; Grooming</h2>
+        <img src="/assets/images/sitting_dog.png" loading="lazy" alt=""/>
+
+        <ul role="list" class="text-center space-y-4">
+            <li>Health skin and coat. Less shedding!</li>
+            <li>Less stress of having to lift and struggle to get your pet into the bathtub.</li>
+            <li>Trimmed nails are safer for your pet and you. Also the floor!</li>
+            <li>Decreased amount of matting.</li>
+            <li>Your pet will look and smell great.</li>
+            <li>Potential health risks may be spotted before they become major complications.</li>
+            <li>Pet becomes accustomed to being bathed. This leads to more enjoyment from the experience!</li>
+        </ul>
+
+        <img src="/assets/images/sitting_cat.png" loading="lazy" alt=""/>
+    </div>
+
+
+    {/* Move above content to a table format */}
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: clamp(
-		calc(var(--large-font) * 40)	
-		, 90%, 800px);
-	}
-
-	h1 {
-		font-size: var(--large-font)
-		font-weight: 800;
-		margin: 0;
-	}
-
-
-	h2 {
-		font-size: calc(var(--large-font) * 0.8);
-		border-bottom: 1px solid #494948;
-		/* Uppercase */
-		text-transform: uppercase;
-	}
-
-main > p {
-  font-size: var(--normal-font);
-  color: #494948;
-  line-height: 1.5;
-  text-justify: newspaper;
-  text-align: justify;
-}
-
-main > p > a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-main > p > a:hover,
-main > p > a:focus,
-main > p > a:active {
-  text-decoration: underline;
-}
-
-table {
-	font-size: var(--normal-font);
-}
-
-td {
-	padding: 1rem;
-}
-
-
-</style>
