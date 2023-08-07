@@ -20,3 +20,8 @@ pnpm-debug.log*
 .DS_Store
 
 .vscode/
+
+# cloudflare doesn't like my lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
