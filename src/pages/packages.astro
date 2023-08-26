@@ -3,157 +3,142 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Packages">
-        <h2>Grooming Packages</h2>
-        <p class='subheading text-center'>
-            <b>All prices are starting prices</b>
-            <br/>
-            I will be able to give you a firm price after I meet your pet, determine the
-            condition of the coat, desired style, and overall temperament.
+  <h2>Grooming Packages</h2>
+  <p class="subheading text-center">
+    <b>All prices are starting prices</b>
+    <br />
+     I will be able to give you a firm price after I meet your pet, determine
+    the condition of the coat, desired style, and overall temperament.
+  </p>
+  <img
+    src="/assets/images/dog_cat_bath.png"
+    loading="lazy"
+    alt="Grooming"
+    width={"100%"}
+  />
+  <section class="text-center">
+    <p class="text-xl font-bold">I no longer groom dogs over 45 lbs.</p>
+    <br />
+
+    <h3>Sizing Reference</h3>
+    <p>
+      <b>Small</b>: Under 15 lbs. <b>Medium</b>: 16-45 lbs.
+    </p>
+  </section>
+  <section class="text-center">
+    <div class="heading center">
+      <h3>Package #1: Bath Only</h3>
+      <h4>For single coated breeds who do not need deshedding services.</h4>
+    </div>
+
+    <p>
+      <b>Small</b> $35 | <b>Medium</b> $45
+      <br />
+      <br />
+       Bath | Conditioner | Ears Cleaned | Pluck Ear Hairs (Certain Breeds)
+      <br />
+      <br />
+       Nails Cut and Filed
+      <br />
+      <br />
+       Sanitation Trim (Certain Breeds) - Includes private area and pad hair
+      <br />
+      <br />
+       Drying | Light Brushing
+      <br />
+      <br />
+       Deodorizing Spritz | Bows or Bandanna for that special, finished look
+    </p>
+  </section>
+  <section class="text-center">
+    <section class="columns-1 md:columns-2">
+      <h3>Package #2: Bath and Trim</h3>
+      <!-- <p class='subheading'>For those who want a little more than a bath.</p> -->
+      <p>
+        <b>SMALL</b> $45 <b>MEDIUM</b> $55
+        <br />
+        <br />
+         Package #1 + <br /> Hair Trimmed to Desired Length
+      </p>
+      <h3>Package #3: Bath and Breed Cut</h3>
+      <!-- <h4>For the breeds who need a little more than a trim.</h4> -->
+      <p>
+        <b>SMALL</b> $48 <b>MEDIUM</b> $58
+        <br />
+        <br />
+         Package #1 + <br /> Hair Trimmed to Desired Length <br /> Breed Cut
+      </p>
+    </section>
+  </section>
+  <section class="flex flex-col items-center text-center">
+    <h3>For the Felines</h3>
+    <div class="stack column">
+      <div class="align-right">
+        <p><i class="disclaimer">Starting at</i> <b>$45</b></p>
+        <p>Bath, brush, dry, nail trim, ear cleaning, and sanitary trim.</p>
+        <br />
+        <p><i class="disclaimer">Starting at</i> <b>$65</b></p>
+
+        <p>
+          Bath | Brush | Dry | Nail Trim
+          <br />
+           Clipping or Deshedding
+          <br />
+           (Lion Cut, Comb Finish or Scissor Finish)
         </p>
-        <img
-                src="/assets/images/dog_cat_bath.png"
-                loading="lazy"
-                alt="Grooming"
-                width={"100%"}
-        />
-        <section class="text-center">
-            <p
-                class="text-xl font-bold"
-            > I no longer groom dogs over 45 lbs. </p>
-            <br/>
-
-            <h3>Sizing Reference</h3>
-            <p>
-                <b>Small</b>: Under 15 lbs. <b>Medium</b>: 16-45 lbs.
-
-            </p>
-        </section>
-        <section class="text-center">
-            <div class="heading center">
-                <h3>Package #1: Bath Only</h3>
-                <h4>For single coated breeds who do not need deshedding services.</h4>
-            </div>
-
-            <p>
-                <b>Small</b> $35 | <b>Medium</b> $45
-                <br/>
-                <br/>
-                Bath | Conditioner | Ears Cleaned | Pluck Ear Hairs (Certain Breeds)
-                <br/>
-                <br/>
-                Nails Cut and Filed
-                <br/>
-                <br/>
-                Sanitation Trim (Certain Breeds) - Includes private area and pad hair
-                <br/>
-                <br/>
-                Drying | Light Brushing
-                <br/>
-                <br/>
-                Deodorizing Spritz | Bows or Bandanna for that special, finished look
-            </p>
-        </section>
-        <section class="text-center">
-            <section class="columns-1 md:columns-2">
-
-                <h3>Package #2: Bath and Trim</h3>
-                <!-- <p class='subheading'>For those who want a little more than a bath.</p> -->
-                <p>
-                    <b>SMALL</b> $45 <b>MEDIUM</b> $55
-                    <br/>
-                    <br/>
-                    Package #1 + <br/> Hair Trimmed to Desired Length
-                </p>
-                <h3>Package #3: Bath and Breed Cut</h3>
-                <!-- <h4>For the breeds who need a little more than a trim.</h4> -->
-                <p>
-                    <b>SMALL</b> $48 <b>MEDIUM</b> $58
-                    <br/>
-                    <br/>
-                    Package #1 + <br/> Hair Trimmed to Desired Length <br/> Breed Cut
-                </p>
-            </section>
-        </section>
-        <section class="text-center items-center flex flex-col">
-            <h3>For the Felines</h3>
-            <div class="stack column">
-                <div class="align-right">
-                    <p><i class="disclaimer">Starting at </i> <b>$45</b></p>
-                    <p>
-                        Bath, brush, dry, nail trim, ear cleaning, and sanitary trim.
-                    </p>
-<br/>
-                    <p><i class="disclaimer">Starting at </i> <b>$65</b></p>
-
-                    <p>
-                        Bath | Brush | Dry | Nail Trim
-                        <br/>
-                        Clipping or Deshedding
-                        <br/>
-                        (Lion Cut,
-                        Comb Finish or Scissor Finish)
-                    </p>
-                    <p class="disclaimer">*if possible</p>
-                </div>
-
-
-            </div>
-        </section>
-        <section class="flex flex-col items-center justify-center space-y-4">
-            <section class='text-left accent grid space-x-3'>
-                <h3 class="col-span-2">Grooming Pricing Procedure</h3>
-                <p class="col-span-2">
-                    I will be able to give you a firm price after I meet your pet,
-                    determine the condition of the coat, desired style, and overall
-                    temperament.
-                    <br/>
-                </p>
-                <div>
-                    <p class="mt-2">
-                        Additional fees may apply for:
-                    </p>
-                    <ul class="no-bullets">
-                        <li>
-                            <b>Coat Condition</b>: Pets with excessive tangling, matting,
-                            undercoat or dirt
-                        </li>
-                        <li>
-                            <b>Breed</b>: Pets with a double coat, long hair, or curly hair
-                        </li>
-                        <li>
-                            <b>Behavior</b>: Pets that are aggressive, fearful, or have a
-                            history of biting
-                        </li>
-                        <li>
-                            <b>Time</b>: Pets that require more time to groom
-                        </li>
-                        <li>
-                            <b>Age</b>: Pets that are elderly or have health issues
-                        </li>
-
-
-                    </ul>
-
-                </div>
-                <img
-                        src="/assets/images/dog_in_towel.jpg"
-                        loading="lazy"
-                        class="self-center sm:block hidden"
-                        alt="Pomeranian"
-                        width={400}
-                />
-            </section>
-            <img
-                    src="/assets/images/lazy_cat.png"
-                    loading="lazy"
-                    alt="Cat grooming"
-                    width={400}
-            />
-        </section>
+        <p class="disclaimer">*if possible</p>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col items-center justify-center space-y-4">
+    <section class="accent grid space-x-3 text-left">
+      <h3 class="col-span-2">Grooming Pricing Procedure</h3>
+      <p class="col-span-2">
+        I will be able to give you a firm price after I meet your pet, determine
+        the condition of the coat, desired style, and overall temperament.
+        <br />
+      </p>
+      <div>
+        <p class="mt-2">Additional fees may apply for:</p>
+        <ul class="no-bullets">
+          <li>
+            <b>Coat Condition</b>: Pets with excessive tangling, matting,
+            undercoat or dirt
+          </li>
+          <li>
+            <b>Breed</b>: Pets with a double coat, long hair, or curly hair
+          </li>
+          <li>
+            <b>Behavior</b>: Pets that are aggressive, fearful, or have a
+            history of biting
+          </li>
+          <li>
+            <b>Time</b>: Pets that require more time to groom
+          </li>
+          <li>
+            <b>Age</b>: Pets that are elderly or have health issues
+          </li>
+        </ul>
+      </div>
+      <img
+        src="/assets/images/dog_in_towel.jpg"
+        loading="lazy"
+        class="hidden self-center sm:block"
+        alt="Pomeranian"
+        width={400}
+      />
+    </section>
+    <img
+      src="/assets/images/lazy_cat.png"
+      loading="lazy"
+      alt="Cat grooming"
+      width={400}
+    />
+  </section>
 </Layout>
 
 <style>
-    .subheading {
-        font-size: var(--small-font);
-    }
+  .subheading {
+    font-size: var(--small-font);
+  }
 </style>

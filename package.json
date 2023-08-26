@@ -1,20 +1,25 @@
 {
-	"name": "all-about-paws-pet-spa",
-	"type": "module",
-	"version": "0.0.1",
-	"scripts": {
-		"dev": "astro dev",
-		"start": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro"
-	},
-	"dependencies": {
-		"@astrojs/preact": "^2.2.1",
-		"@astrojs/sitemap": "^2.0.2",
-		"@astrojs/tailwind": "^4.0.0",
-		"astro": "^2.8.3",
-		"preact": "^10.16.0",
-		"tailwindcss": "^3.3.3"
-	}
+  "name": "all-about-paws-pet-spa",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/preact": "^2.2.1",
+    "@astrojs/sitemap": "^2.0.2",
+    "@astrojs/tailwind": "^4.0.0",
+    "astro": "^2.8.3",
+    "preact": "^10.16.0",
+    "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.2",
+    "prettier-plugin-astro": "^0.12.0",
+    "prettier-plugin-tailwindcss": "^0.5.3"
+  }
 }

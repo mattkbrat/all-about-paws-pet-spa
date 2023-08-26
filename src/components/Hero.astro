@@ -1,26 +1,16 @@
----
-import { Image } from '@astrojs/image/components';
-
-const src = '/assets/images/hero.png';
----
-
-<div class="hero">
-</div>
+<div class="hero"></div>
 
 <style>
-    .hero {
-        background: url('/assets/images/header.png') center/cover;
-        background-color: #d3d4cf;
-        background-position: center;
-        background-repeat: no-repeat;
-        /* display: flex; */
-        /* justify-content: center; */
-        align-items: center;
-        height: clamp(300px, 50vh, 500px);
-        width: 100vw;
-        flex-direction: column;
-        overflow: hidden;
-        scrollbar-width: thin;
-        margin-right: 2px;
-    }
+  .hero {
+    background: #d3d4cf url("/assets/images/header.png") no-repeat center;
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+    height: clamp(300px, 50vh, 500px);
+    width: 100vw;
+    flex-direction: column;
+    overflow: hidden;
+    scrollbar-width: thin;
+    margin-right: 2px;
+  }
 </style>
