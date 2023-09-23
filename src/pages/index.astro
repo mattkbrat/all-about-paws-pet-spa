@@ -38,7 +38,7 @@ import Layout from "../layouts/Layout.astro";
       <a
         target="_blank"
         referrerpolicy={"no-referrer"}
-        class="text-accent nav_link w-fit content-center items-center text-sm md:w-full md:text-lg"
+        class="text-accent nav_link w-fit content-center items-center text-md md:w-full md:text-lg"
         href={import.meta.env.GOOGLE_REVIEWS_URL}
       >
         Reviews
@@ -46,7 +46,7 @@ import Layout from "../layouts/Layout.astro";
       <a
         target="_blank"
         referrerpolicy={"no-referrer"}
-        class="text-accent nav_link w-fit content-center items-center text-center text-sm md:w-full md:text-left md:text-lg"
+        class="text-accent nav_link w-fit content-center items-center text-center text-md md:w-full md:text-left md:text-lg"
         href={import.meta.env.GOOGLE_WRITE_REVIEW}
       >
         Write a Review
@@ -65,7 +65,7 @@ import Layout from "../layouts/Layout.astro";
         src="https://maps-api-ssl.google.com/maps?hl=en&ll=40.305269,-103.844805&output=embed&q=16329+Co+Rd+V,+Fort+Morgan,+CO+80701,+USA+(16329+Co+Rd+V)&z=16"
         allowfullscreen=""></iframe>
       <a
-        class="text-accent nav_link w-fit content-center items-center text-center text-sm md:w-full md:text-left md:text-lg"
+        class="text-accent nav_link w-fit content-center items-center text-center text-md md:w-full md:text-left md:text-lg"
         href={import.meta.env.GOOGLE_DIRECTION_URL}
         target="_blank"
         referrerpolicy={"no-referrer"}
@@ -78,17 +78,17 @@ import Layout from "../layouts/Layout.astro";
   <section>
     <h2>benefits of regular bathing &#38; Grooming</h2>
     <div
-      class="equal-columns mt-6 flex flex-col items-center gap-4 md:flex-row"
+      class="equal-columns mt-6 flex flex-col items-center gap-4 lg:flex-row"
     >
       <img
-        class="mb-4 h-full max-w-xs md:mb-0 md:mr-4"
+        class="w-full md:w-1/4 md:mb-0 md:mr-4"
         src="/assets/images/sitting_dog.png"
         loading="lazy"
         alt=""
       />
 
-      <ul role="list" class="space-y-4 text-center">
-        <li>Health skin and coat. Less shedding!</li>
+      <ul role="list" class="w-full md:w-2/4 space-y-4 text-center">
+        <li>Healthy skin and coat. Less shedding!</li>
         <li>
           Less stress of having to lift and struggle to get your pet into the
           bathtub.
@@ -107,7 +107,7 @@ import Layout from "../layouts/Layout.astro";
       </ul>
 
       <img
-        class="mb-4 h-full max-w-xs md:mb-0 md:mr-4"
+        class="w-full md:w-1/4 md:mb-0 md:mr-4"
         src="/assets/images/sitting_cat.png"
         loading="lazy"
         alt=""
