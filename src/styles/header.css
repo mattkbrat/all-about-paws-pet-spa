@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 nav {
   display: flex;
   justify-content: flex-end;
@@ -52,17 +56,6 @@ nav > ul > li {
 .nav_scrolled {
   background-color: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.nav_link {
-  text-decoration: none;
-  padding-inline: 6px;
-}
-
-.nav_link:hover,
-.nav_link:focus,
-.nav_link:active {
-  color: gray;
 }
 
 .full-width {
@@ -123,5 +116,19 @@ nav > ul > li {
 
   .logo {
     margin-right: 0;
+  }
+}
+
+
+
+@layer components {
+  .nav_link {
+    @apply decoration-0 px-2 py-0.5 lg:px-4 lg:text-xl;
+  }
+
+  .nav_link:hover,
+  .nav_link:focus,
+  .nav_link:active {
+    @apply text-gray;
   }
 }
