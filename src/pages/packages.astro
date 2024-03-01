@@ -9,6 +9,12 @@ import Layout from "../layouts/Layout.astro";
     <br />
      I will be able to give you a firm price after I meet your pet, determine
     the condition of the coat, desired style, and overall temperament.
+    <br/>
+    <span class="text-xl font-bold">
+    Small dogs start at $40, medium dogs start at $50 and cats start at $45. 
+    </span>
+    <br/>
+    <span><b>Small</b>: Under 15 lbs. <b>Medium</b>: 16-45 lbs.</span>
   </p>
   <img
     src="/assets/images/dog_cat_bath.png"
@@ -16,78 +22,73 @@ import Layout from "../layouts/Layout.astro";
     alt="Grooming"
     width={"100%"}
   />
-  <section class="text-center">
-    <p class="text-xl font-bold">I no longer groom dogs over 45 lbs.</p>
-    <br />
+    <p class="font-xl  text-center font-bold">I groom pets up to 60 lbs.</p>
 
-    <h3>Sizing Reference</h3>
-    <p>
-      <b>Small</b>: Under 15 lbs. <b>Medium</b>: 16-45 lbs.
-    </p>
-  </section>
-  <section class="text-center">
-    <div class="heading center">
+
+  <section class="flex flex-col grow flex-1 text-center items-center">
+    <div class="flex flex-col">
       <h3>Package #1: Bath Only</h3>
-      <h4>For single coated breeds who do not need deshedding services.</h4>
+      <p class="text-sm">For single coated breeds who do not need deshedding services.</p>
     </div>
 
-    <p>
-      <b>Small</b> $35 | <b>Medium</b> $45
-      <br />
-      <br />
+    <div class="flex flex-col gap-2">
+       <span>
        Bath | Conditioner | Ears Cleaned | Pluck Ear Hairs (Certain Breeds)
-      <br />
-      <br />
+       </span>
+      <div class="flex flex-row gap-4 text-center flex-wrap items-center">
+       <span class="flex-1 grow">
+       Sanitation Trim <br/> (Certain Breeds)
+      <br/>
+      <span class="text-sm">
+       Includes private area and pad hair
+      </span>
+       </span>
+       <span class="flex-1 grow">
        Nails Cut and Filed
-      <br />
-      <br />
-       Sanitation Trim (Certain Breeds) - Includes private area and pad hair
-      <br />
-      <br />
-       Drying | Light Brushing
-      <br />
-      <br />
-       Deodorizing Spritz | Bows or Bandanna for that special, finished look
-    </p>
+       </span>
+       <span class="flex-1 grow">
+       Drying <br/> Light Brushing
+       </span>
+       <span class="flex-1 grow">
+         Deodorizing Spritz & Finish
+         <br/>
+      <span class="text-sm">
+         Bows or Bandanna for that special, finished look
+      </span>
+       </span>
+      </div>
+
+
+    </div>
   </section>
-  <section
-    class="flex flex-col items-start justify-around space-y-10 text-center md:flex-row md:space-y-0"
-  >
-    <section class="w-full text-center">
-      <h3>Package #2: Bath and Trim</h3>
-      <p>
-        <b>SMALL</b> $45 <b>MEDIUM</b> $55
-        <br />
-        <br />
-         Package #1 + <br /> Hair Trimmed to Desired Length
-      </p>
-    </section>
-    <section class="w-full text-center">
-      <h3>Package #3: Bath and Breed Cut</h3>
-      <p>
-        <b>SMALL</b> $48 <b>MEDIUM</b> $58
-        <br />
-        <br />
-         Package #1 + <br /> Hair Trimmed to Desired Length <br /> Breed Cut
-      </p>
-    </section>
+<div class="flex flex-row flex-wrap">
+  <section class="flex flex-col grow flex-1 text-center">
+    <h3>Package #2: Bath and Trim</h3>
+    <span>
+      Package #1 + <br /> Hair Trimmed to Desired Length
+    </span>
   </section>
-  <section class="flex flex-col items-center text-center">
+  <section class="w-full flex flex-col grow flex-1 text-center">
+    <h3>Package #3: Bath and Breed Cut</h3>
+    <span>
+      Package #1 + <br /> Hair Trimmed to Desired Length <br /> Breed Cut
+    </span>
+  </section>
+</div>
+  <section class="flex flex-col grow flex-1 items-center text-center">
     <h3>For the Felines</h3>
     <div class="stack column">
-      <div class="align-right">
-        <p><i class="disclaimer">Starting at</i> <b>$45</b></p>
-        <p>Bath, brush, dry, nail trim, ear cleaning, and sanitary trim.</p>
-        <br />
-        <p><i class="disclaimer">Starting at</i> <b>$65</b></p>
-
-        <p>
+      <div class="flex flex-col gap-2">
+        <span>Bath, brush, dry, nail trim, ear cleaning, and sanitary trim.</span>
+        <span>
           Bath | Brush | Dry | Nail Trim
-          <br />
+        </span>
+        <span>
            Clipping or Deshedding
-          <br />
+        </span>
+        <span>
            (Lion Cut, Comb Finish or Scissor Finish)
-        </p>
+        </span>
         <p class="disclaimer">*if possible</p>
       </div>
     </div>
@@ -100,25 +101,42 @@ import Layout from "../layouts/Layout.astro";
         the condition of the coat, desired style, and overall temperament.
         <br />
       </p>
-      <div>
+      <div class="flex flex-col md:flex-row gap-4">
         <p class="mt-2">Additional fees may apply for:</p>
-        <ul class="no-bullets">
+        <ul class="decoration-0">
           <li>
-            <b>Coat Condition</b>: Pets with excessive tangling, matting,
-            undercoat or dirt
+            <span class="font-bold underline underline-offset-2">Coat Condition</span>
+            <br/>
+            <span class="text-sm">
+              Pets with excessive tangling, matting, undercoat or dirt
+            </span>
           </li>
           <li>
-            <b>Breed</b>: Pets with a double coat, long hair, or curly hair
+            <span class="font-bold underline underline-offset-2">Breed</span>
+            <br/>
+            <span class="text-sm"> Pets with a double coat, long hair, or curly hair</span>
           </li>
           <li>
-            <b>Behavior</b>: Pets that are aggressive, fearful, or have a
+            <span class="font-bold underline underline-offset-2">Behavior</span>
+            <br/>
+            <span class="text-sm">
+            Pets that are aggressive, fearful, or have a
             history of biting
+            </span>
           </li>
           <li>
-            <b>Time</b>: Pets that require more time to groom
+            <span class="font-bold underline underline-offset-2">Time</span>
+            <br/>
+            <span class="text-sm">
+              Pets that require more time to groom
+            </span>
           </li>
           <li>
-            <b>Age</b>: Pets that are elderly or have health issues
+            <span class="font-bold underline underline-offset-2">Age</span>
+            <br/>
+            <span class="text-sm">
+              Pets that are elderly or have health issues
+            </span>
           </li>
         </ul>
       </div>

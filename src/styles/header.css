@@ -62,12 +62,6 @@ nav > ul > li {
   width: 100%;
 }
 
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .spacer {
   flex: 1;
 }
