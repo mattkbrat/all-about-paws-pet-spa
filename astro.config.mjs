@@ -14,7 +14,7 @@ export default defineConfig({
       // Example: Provide a custom path to a Tailwind config file
       configFile: "./tailwind.config.js",
     }),
-    preact(),
+    preact({ compat: true }),
     sitemap(),
   ],
 });

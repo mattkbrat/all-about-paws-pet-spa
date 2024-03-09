@@ -1,5 +1,6 @@
 ---
 import Attribution from "../components/Attribution.astro";
+
 export interface Props {
   title: string;
 }
@@ -48,7 +49,7 @@ import Header from "../components/Header";
   </body>
 </html>
 
-<style is:global>
+<style is:global lang="scss">
   @font-face {
     font-family: "Noto Sans Regular";
     src: url("/assets/fonts/NotoSans/NotoSansDisplay-Regular.ttf")
@@ -60,6 +61,7 @@ import Header from "../components/Header";
     src: url("/assets/fonts/NotoSans/NotoSansDisplay_Condensed-Light.ttf")
       format("truetype");
   }
+
 
   :root {
     --accent: 124, 58, 237;
@@ -131,4 +133,21 @@ import Header from "../components/Header";
   aside {
     font-family: "Noto Sans Condensed", sans-serif;
   }
+
+.image-gallery-thumbnails-container {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  }
+
+
+@media (max-width:480px)  { 
+/* smartphones, Android phones, landscape iPhone */ 
+
+.image-gallery-thumbnails-wrapper { 
+  display: none
+}
+}
+
 </style>
