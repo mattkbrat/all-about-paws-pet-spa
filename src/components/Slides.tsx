@@ -1,7 +1,5 @@
-
 import React, { useEffect } from "preact/compat";
 import ImageGallery from "react-image-gallery";
-
 
 const originals = `
 https://i.postimg.cc/4NWhdjVR/bowling-01.png
@@ -17,7 +15,7 @@ https://i.postimg.cc/ZnV0Wy9x/bowling-10.png
 https://i.postimg.cc/t4LJnbgw/bowling-11.png
 https://i.postimg.cc/8kH7Kxyf/bowling-12.png
 https://i.postimg.cc/MKpvht4P/bowling-13.png
-`.split('\n')
+`.split("\n");
 
 const thumbs = `
 https://i.postimg.cc/d1nJ6cqq/bowling-01.png
@@ -33,40 +31,43 @@ https://i.postimg.cc/76PkftSj/bowling-10.png
 https://i.postimg.cc/V67cM9Rv/bowling-11.png
 https://i.postimg.cc/KjRh5KqN/bowling-12.png
 https://i.postimg.cc/rs3XZ87L/bowling-13.png
-`.split('\n')
+`.split("\n");
 
-const images = originals.map((o, i) => {
-  if (!o) return null;
-  return {
-    original: o,
-    thumbnail: thumbs[i]
-  }
-}).filter(Boolean);
+const images = originals
+	.map((o, i) => {
+		if (!o) return null;
+		return {
+			original: o,
+			thumbnail: thumbs[i],
+		};
+	})
+	.filter(Boolean);
 
 const MyGallery = () => {
-  console.log("image gallery")
+	console.log("image gallery");
 
-  useEffect(() => {
+	useEffect(() => {
+		const element = document.getElementsByClassName(
+			"image-gallery-right-nav",
+		)[0] as HTMLButtonElement;
 
-    const element = document.getElementsByClassName('image-gallery-right-nav')[0] as HTMLButtonElement;
+		element && element.click();
+	}, []);
 
-    element && element.click();
-  }, [])
-
-  // Show the gif on mobile and the slideshow on desktop
-  return (
-    <>
-      <div class={'lg:flex lg:flex-col my-16 hidden'}>
-        <ImageGallery
-          autoPlay={true}
-          infinite={true}
-          items={images} />
-      </div>
-      <div class={'block lg:hidden'}>
-        <img src={"https://i.postimg.cc/L4BPdJsX/bowling.gif"} alt="About All About Paws" />
-      </div>
-    </>
-  )
-}
+	// Show the gif on mobile and the slideshow on desktop
+	return (
+		<>
+			<div class={"lg:flex lg:flex-col my-16 hidden"}>
+				<ImageGallery autoPlay={true} infinite={true} items={images} />
+			</div>
+			<div class={"block lg:hidden"}>
+				<img
+					src={"https://i.postimg.cc/L4BPdJsX/bowling.gif"}
+					alt="About All About Paws"
+				/>
+			</div>
+		</>
+	);
+};
 
 export default MyGallery;
