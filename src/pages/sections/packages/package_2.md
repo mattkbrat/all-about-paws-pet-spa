@@ -3,4 +3,4 @@ title: 'Package #2'
 alt: "Bath and Trim"
 author: 'Debi'
 ---
-- Hair Trimmed to Desired Length  
+- Hand scisdored silhouette trim, neaten feet and fanny. 
