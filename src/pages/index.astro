@@ -1,6 +1,8 @@
 ---
 
 import "react-image-gallery/styles/css/image-gallery.css";
+import * as indexSection from "../pages/sections/index.md";
+import * as regular from "../pages/sections/regular-bathing-grooming-benefits.md";
 
 import Layout from "../layouts/Layout.astro";
 import Slideshow from "../components/Slides";
@@ -23,26 +25,9 @@ import Slideshow from "../components/Slides";
   <div
     class="flex flex-col-reverse space-x-9 md:flex-row md:items-center md:justify-center md:space-x-0 md:space-y-4"
   >
-    <p class="w-full md:mr-4">
-      {` `}
-       All About Paws Pet Spa LLC. is a locally owned business providing
-      full-service grooming for dogs and cats. My core belief is that every
-      animal is unique and requires customized treatment. While many pets come
-      in with tails wagging in happy anticipation of being groomed, others are
-      more anxious. For this reason, I always spend a few minutes "meeting" your
-      pet and helping them get to know me before I start grooming.
-      <br />
-      <br />
-       Kindness, understanding, knowledge, and experience are the keys to great
-      grooming, so I go out of my way to treat every animal with gentleness and
-      respect - the way I treat my own pets. As I have 20 plus years in the
-      professional grooming industry, you can rest assured your beloved pet will
-      be in good hands.
-      <br />
-      <br />
-       Call to hear more about All About Paws, or just come on over to say,
-      "Hello!"
-    </p>
+    <article class="article">
+      <indexSection.Content/>
+    </article>
 
     <aside
       class="border-gray-200 mb-2 flex w-full
@@ -102,24 +87,9 @@ import Slideshow from "../components/Slides";
         alt=""
       />
 
-      <ul role="list" class="w-full md:w-2/4 space-y-4 text-center">
-        <li>Healthy skin and coat. Less shedding!</li>
-        <li>
-          Less stress of having to lift and struggle to get your pet into the
-          bathtub.
-        </li>
-        <li>Trimmed nails are safer for your pet and you. Also the floor!</li>
-        <li>Decreased amount of matting.</li>
-        <li>Your pet will look and smell great.</li>
-        <li>
-          Potential health risks may be spotted before they become major
-          complications.
-        </li>
-        <li>
-          Pet becomes accustomed to being bathed. This leads to more enjoyment
-          from the experience!
-        </li>
-      </ul>
+        <article class="article text-center">
+         <regular.Content/>
+        </article>
 
       <img
         class="w-full md:w-1/4 md:mb-0 md:mr-4"

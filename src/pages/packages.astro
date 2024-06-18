@@ -1,20 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const packages = await Astro.glob("../pages/sections/packages/package*.md")
+import * as groomingPackages from "../pages/sections/packages/grooming_packages.md"
+import * as basePackageInfo from "../pages/sections/all-packages.md";
+import * as felineInfo from "../pages/sections/packages/for_the_felines.md";
+import * as pricingProcedure from "../pages/sections/packages/pricing_procedure.md";
+
 ---
 
 <Layout title="Packages">
-  <h2>Grooming Packages</h2>
+  <h2>
+    {groomingPackages.frontmatter.title}
+  </h2>
+    <section>
+      <groomingPackages.Content/>
+    </section>
+
   <p class="subheading text-center">
-    <b>All prices are starting prices</b>
-    <br />
-     I will be able to give you a firm price after I meet your pet, determine
-    the condition of the coat, desired style, and overall temperament.
-    <br/>
-    <span class="text-xl font-bold">
-    Small dogs start at $40, medium dogs start at $50 and cats start at $45. 
-    </span>
-    <br/>
-    <span><b>Small</b>: Under 15 lbs. <b>Medium</b>: 16-45 lbs.</span>
   </p>
   <img
     src="/assets/images/dog_cat_bath.png"
@@ -22,138 +25,64 @@ import Layout from "../layouts/Layout.astro";
     alt="Grooming"
     width={"100%"}
   />
-    <p class="font-xl  text-center font-bold">I groom pets up to 60 lbs.</p>
-
-
-  <section class="flex flex-col grow flex-1 text-center items-center">
-    <div class="flex flex-col">
-      <h3>Package #1: Bath Only</h3>
-      <p class="text-sm">For single coated breeds who do not need deshedding services.</p>
-    </div>
-
-    <div class="flex flex-col gap-2">
-       <span>
-       Bath | Conditioner | Ears Cleaned | Pluck Ear Hairs (Certain Breeds)
-       </span>
-      <div class="flex flex-row gap-4 text-center flex-wrap items-center">
-       <span class="flex-1 grow">
-       Sanitation Trim <br/> (Certain Breeds)
-      <br/>
-      <span class="text-sm">
-       Includes private area and pad hair
-      </span>
-       </span>
-       <span class="flex-1 grow">
-       Nails Cut and Filed
-       </span>
-       <span class="flex-1 grow">
-       Drying <br/> Light Brushing
-       </span>
-       <span class="flex-1 grow">
-         Deodorizing Spritz & Finish
-         <br/>
-      <span class="text-sm">
-         Bows or Bandanna for that special, finished look
-      </span>
-       </span>
-      </div>
-
-
-    </div>
-  </section>
-<div class="flex flex-row flex-wrap">
-  <section class="flex flex-col grow flex-1 text-center">
-    <h3>Package #2: Bath and Trim</h3>
-    <span>
-      Package #1 + <br /> Hair Trimmed to Desired Length
-    </span>
-  </section>
-  <section class="w-full flex flex-col grow flex-1 text-center">
-    <h3>Package #3: Bath and Breed Cut</h3>
-    <span>
-      Package #1 + <br /> Hair Trimmed to Desired Length <br /> Breed Cut
-    </span>
-  </section>
-</div>
-  <section class="flex flex-col grow flex-1 items-center text-center">
-    <h3>For the Felines</h3>
-    <div class="stack column">
-      <div class="flex flex-col gap-2">
-        <span>Bath, brush, dry, nail trim, ear cleaning, and sanitary trim.</span>
-        <span>
-          Bath | Brush | Dry | Nail Trim
-        </span>
-        <span>
-           Clipping or Deshedding
-        </span>
-        <span>
-           (Lion Cut, Comb Finish or Scissor Finish)
-        </span>
-        <p class="disclaimer">*if possible</p>
-      </div>
-    </div>
-  </section>
-  <section class="flex flex-col items-center justify-center space-y-4">
-    <section class="accent grid space-x-3 text-left">
-      <h3 class="col-span-2">Grooming Pricing Procedure</h3>
-      <p class="col-span-2">
-        I will be able to give you a firm price after I meet your pet, determine
-        the condition of the coat, desired style, and overall temperament.
-        <br />
-      </p>
-      <div class="flex flex-col md:flex-row gap-4">
-        <p class="mt-2">Additional fees may apply for:</p>
-        <ul class="decoration-0">
-          <li>
-            <span class="font-bold underline underline-offset-2">Coat Condition</span>
-            <br/>
-            <span class="text-sm">
-              Pets with excessive tangling, matting, undercoat or dirt
-            </span>
-          </li>
-          <li>
-            <span class="font-bold underline underline-offset-2">Breed</span>
-            <br/>
-            <span class="text-sm"> Pets with a double coat, long hair, or curly hair</span>
-          </li>
-          <li>
-            <span class="font-bold underline underline-offset-2">Behavior</span>
-            <br/>
-            <span class="text-sm">
-            Pets that are aggressive, fearful, or have a
-            history of biting
-            </span>
-          </li>
-          <li>
-            <span class="font-bold underline underline-offset-2">Time</span>
-            <br/>
-            <span class="text-sm">
-              Pets that require more time to groom
-            </span>
-          </li>
-          <li>
-            <span class="font-bold underline underline-offset-2">Age</span>
-            <br/>
-            <span class="text-sm">
-              Pets that are elderly or have health issues
-            </span>
-          </li>
-        </ul>
-      </div>
-      <img
-        src="/assets/images/dog_in_towel.jpg"
-        loading="lazy"
-        class="hidden self-center sm:block"
-        alt="Pomeranian"
-        width={400}
-      />
+  <p class="font-xl  text-center font-bold"></p>
+  <div class="flex flex-wrap flex-row h-full outline-subtle">
+    <section class="card h-full ">
+      <h3 class="underline underline-offset-2">
+        {basePackageInfo.frontmatter.title}
+      </h3>
+      <ul class="break-words">
+      <basePackageInfo.Content/>
+      </ul>
     </section>
+  <ul class="flex flex-col flex-wrap flex-1 h-full justify-between border-subtle md:border-l-[2px] border-dashed">
+    {packages.map(post => 
+      <li class="card">
+      <h3 class="underline underline-offset-2 min-w-max">
+          {post.frontmatter.title}: {post.frontmatter.alt}
+      </h3>
+      <span >{post.frontmatter.description}</span>
+      <ul class="break-words min-w-40"><post.Content/></ul>
+      </li>
+    )}
+  </ul>
+
+  </div>
+
+  <div class="flex-wrap flex flex-row justify-between outline-subtle">
+
+  <section class="card ">
+      <h3 class="underline underline-offset-2 min-w-max">
+          {felineInfo.frontmatter.title}: {felineInfo.frontmatter.alt}
+      </h3>
+      <span >{felineInfo.frontmatter.description}</span>
+      <ul class="break-words"><felineInfo.Content/></ul>
+  </section>
     <img
       src="/assets/images/lazy_cat.png"
       loading="lazy"
       alt="Cat grooming"
       width={400}
     />
+  </div>
+
+  <section class="flex flex-col items-center justify-center space-y-4">
+    <section class="accent flex space-x-3 text-left flex-col" id="grooming-packages-pricing-content">
+      <h3 class="col-span-2">{pricingProcedure.frontmatter.title}</h3>
+      <div class="flex flex-col flex-wrap md:flex-row justify-center content-between">
+        <div class="flex-1 flex-row flex-wrap mr-10">
+          {pricingProcedure.frontmatter.description}
+          <pricingProcedure.Content/>
+        </div>
+        <img
+          src="/assets/images/dog_in_towel.jpg"
+          loading="lazy"
+          alt="Pomeranian"
+          width={400}
+        />
+
+      </div>
+    </section>
   </section>
 </Layout>
 
@@ -161,4 +90,5 @@ import Layout from "../layouts/Layout.astro";
   .subheading {
     font-size: var(--small-font);
   }
+
 </style>

@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+article {
+  @apply flex flex-col gap-4;
+}
+
+.card {
+ @apply flex flex-col p-4; 
+}
+
+.outline-subtle { 
+  @apply outline outline-gray/10 outline-[1px]
+}
+
+.border-subtle { 
+  @apply border-gray/10 
+}
+
 nav {
   display: flex;
   justify-content: flex-end;
