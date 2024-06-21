@@ -1,0 +1,33 @@
+---
+// 1. The frontmatter prop gives access to frontmatter and other data
+const { frontmatter, ...other } = Astro.props;
+
+const { title, url } = frontmatter;
+
+import BaseLayout from "../../../layouts/Layout.astro";
+
+const isFaq = Astro.url.href.endsWith("faq");
+const tag = url.split("/").slice(-1)[0];
+const returnUrl = `/faq#${tag}`;
+---
+
+{isFaq ? (
+
+  <slot />
+
+) : (
+
+<BaseLayout title={`FAQ: ${title} `}>
+  <div class="flex flex-row text-sm">
+    <a href={returnUrl}>FAQ</a><span>/</span><a
+      class="font-bold underline"
+      href={url}>{title}</a
+    >
+  </div>
+  <!-- Add other UI components here, like common headers and footers. -->
+  <h1 class="text-lg font-bold underline uppercase">{title}</h1>
+  <!-- 2. Rendered HTML will be passed into the default slot. -->
+  <slot />
+</BaseLayout>
+) 
+
