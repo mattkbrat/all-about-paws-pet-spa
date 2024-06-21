@@ -5,8 +5,8 @@ const { title, url } = frontmatter || {};
 
 import BaseLayout from "../../../layouts/Layout.astro";
 
-const isFaq = Astro.url.href.endsWith("faq");
 const tag = url?.split("/").slice(-1)[0];
+const isFaq = !Astro.url.href.includes(tag);
 const returnUrl = `/faq#${tag}`;
 ---
 
