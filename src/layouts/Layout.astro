@@ -8,46 +8,28 @@ export interface Props {
 const { title } = Astro.props;
 
 import Footer from "../components/Footer.astro";
-import Hero from "../components/Hero.astro";
 import Header from "../components/Header";
+import Hero from "../components/Hero.astro";
+import Root from "./Root.astro";
 ---
 
-<!doctype html>
-<html lang="en" class="flex">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <title>{title}</title>
-  </head>
-  <body>
+<Root title={title}>
   <div class="flex flex-col min-h-screen justify-between">
-
     <!--<Navigation/>-->
     <Hero />
     <Header
       GOOGLE_DIRECTION_URL={import.meta.env.GOOGLE_DIRECTION_URL}
       client:visible
     />
-    <main
-      class="flex justify-center 2xl:text-xl items-start"
-    >
-      <div id="main" class="max-w-6xl flex flex-col gap-4">
+    <main class="flex justify-center 2xl:text-xl items-start flex-1">
+      <div id="main" class="max-w-6xl flex flex-col gap-4 self-center">
         <slot />
       </div>
     </main>
     <Footer />
-    </div>
-  <Attribution/>
-  </body>
-</html>
+  </div>
+  <Attribution />
+</Root>
 
 <style is:global lang="scss">
   @font-face {
@@ -61,7 +43,6 @@ import Header from "../components/Header";
     src: url("/assets/fonts/NotoSans/NotoSansDisplay_Condensed-Light.ttf")
       format("truetype");
   }
-
 
   :root {
     --accent: 124, 58, 237;
@@ -134,20 +115,18 @@ import Header from "../components/Header";
     font-family: "Noto Sans Condensed", sans-serif;
   }
 
-.image-gallery-thumbnails-container {
-  position: absolute !important;
-  left: 0 !important;
-  right: 0 !important;
-  width: 100% !important;
+  .image-gallery-thumbnails-container {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
   }
 
+  @media (max-width: 480px) {
+    /* smartphones, Android phones, landscape iPhone */
 
-@media (max-width:480px)  { 
-/* smartphones, Android phones, landscape iPhone */ 
-
-.image-gallery-thumbnails-wrapper { 
-  display: none
-}
-}
-
+    .image-gallery-thumbnails-wrapper {
+      display: none;
+    }
+  }
 </style>

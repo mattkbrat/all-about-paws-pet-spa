@@ -12,6 +12,7 @@ const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 	useEffect(() => {
 		if (typeof window === "undefined") return;
 		setRoute(window.location.pathname);
+		console.log({ route });
 	}, [route]);
 
 	useEffect(() => {
@@ -67,7 +68,7 @@ const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 				<li
 					id="faq"
 					class={`nav_link h-full w-full sm:w-auto ${
-						route.startsWith("/faq") ? "active" : "not-active"
+						route.includes("faq") ? "active" : "not-active"
 					}`}
 				>
 					<a href="/faq" class="nav_link">
@@ -106,6 +107,7 @@ const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 					href={GOOGLE_DIRECTION_URL}
 					target="_blank"
 					referrerpolicy={"no-referrer"}
+					rel="noreferrer"
 				>
 					Directions
 				</a>

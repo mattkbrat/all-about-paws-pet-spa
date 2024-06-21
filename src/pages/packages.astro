@@ -1,12 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const packages = await Astro.glob("../pages/sections/packages/package*.md")
-import * as groomingPackages from "../pages/sections/packages/grooming_packages.md"
+const packages = await Astro.glob("../pages/sections/packages/package*.md");
 import * as basePackageInfo from "../pages/sections/all-packages.md";
 import * as felineInfo from "../pages/sections/packages/for_the_felines.md";
+import * as groomingPackages from "../pages/sections/packages/grooming_packages.md";
 import * as pricingProcedure from "../pages/sections/packages/pricing_procedure.md";
-
 ---
 
 <Layout title="Packages">
