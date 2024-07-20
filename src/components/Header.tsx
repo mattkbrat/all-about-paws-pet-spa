@@ -42,7 +42,7 @@ const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 		return (
 			<ul
 				class={
-					"flex bg-gray-dark sm:bg-transparent bg-opacity-80 sm:bg-opacity-100 absolute sm:relative pb-2 pl-2 top-12 sm:top-0 right-0 w-min lg:text-xl flex-col space-y-2 self-center text-right sm:flex-row md:w-full "
+					"flex bg-gray-dark sm:bg-transparent bg-opacity-80 sm:bg-opacity-100 absolute sm:relative pb-2 pl-2 top-12 sm:top-0 right-0 w-min lg:text-xl flex-col space-y-2 self-center text-right sm:flex-row md:w-full justify-end "
 				}
 			>
 				<li class={"hidden"} />
@@ -118,6 +118,7 @@ const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 							"flex 2xl:hidden w-full flex-row items-end justify-end text-right sm:hidden"
 						}
 						onClick={() => setMenuOpen(!menuOpen)}
+						type="button"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -131,6 +132,7 @@ const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 							stroke-linecap="round"
 							stroke-linejoin="round"
 						>
+							<title>Nav Menu Toggle</title>
 							<path stroke="none" d="M0 0h24v24H0z" />
 							<line x1="4" y1="6" x2="20" y2="6" />
 							<line x1="4" y1="12" x2="20" y2="12" />

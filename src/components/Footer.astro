@@ -1,5 +1,5 @@
-<footer class="pt-auto pb-0">
-  <div class="footer flex justify-center px-4 align-middle">
+<footer class="pt-auto pb-0 flex footer justify-center">
+  <div class="flex justify-between px-4 align-middle flex-1 xl:max-w-[50dvw]">
     {/* Google icon svg */}
     <a href={import.meta.env.GOOGLE_PAGE} class="self-center">
       <svg
@@ -15,9 +15,9 @@
     </a>
 
     <section
-      class="my-4 flex w-full flex-col place-content-between items-center space-y-6 text-center md:flex-row md:space-y-0"
+      class="my-4 flex flex-1 flex-col place-content-between items-center space-y-6 text-center md:flex-row md:space-y-0"
     >
-      <section class="w-full">
+      <section class="flex-1 flex-wrap">
         <h3>Hours</h3>
         <table class="inline self-center">
           <tr>
@@ -34,13 +34,13 @@
           </tr>
         </table>
       </section>
-      <section class="w-full">
+      <section class="flex-1 flex-wrap ">
         <h3>Location</h3>
         <p>16329 County Road V</p>
         <p>Fort Morgan, CO</p>
         <p>80701</p>
       </section>
-      <section class="w-full">
+      <section class="flex-1 flex-wrap">
         <h3>Contact</h3>
         <a href=`tel:+${import.meta.env.PHONE.replace(/\D/g, '')}`>
           Call me at {import.meta.env.PHONE}
