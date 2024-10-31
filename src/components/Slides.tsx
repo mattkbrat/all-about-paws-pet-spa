@@ -33,7 +33,7 @@ const MyGallery = () => {
 	// Show the gif on mobile and the slideshow on desktop
 	return (
 		<>
-			<div class={"lg:flex lg:flex-col my-16 hidden"}>
+			<div class={"lg:flex lg:flex-col hidden"}>
 				<ImageGallery autoPlay={true} infinite={true} items={images} />
 			</div>
 			<div class={"block lg:hidden"}>
