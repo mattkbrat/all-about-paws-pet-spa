@@ -31,16 +31,9 @@ const faq = await Astro.glob("../pages/sections/faq/*.md*");
       faq.map((post) => (
         <li class="flex flex-col gap-2 anchor">
           <a class="question" href={post.url} id="grooming-frequency">
-            <h3
-              class="min-w-max"
-              id={post.url.split("/").slice(-1)[0]}
-        >
-          <span class="text-xl font-extrabold">
-              Q: 
-          </span>
-          <span>
-            {post.frontmatter.title}
-          </span>
+            <h3 class="min-w-max" id={post.url.split("/").slice(-1)[0]}>
+              <span class="text-xl font-extrabold">Q:</span>
+              <span>{post.frontmatter.title}</span>
             </h3>
           </a>
           <div class="flex gap-2">
@@ -49,7 +42,7 @@ const faq = await Astro.glob("../pages/sections/faq/*.md*");
               <post.Content />
             </div>
           </div>
-          <hr class="border-b-[1px] border-dashed border-gray/75" />
+          <hr class="border-b-[1px] border-dashed border-gray-200/75" />
         </li>
       ))
     }
@@ -79,6 +72,5 @@ const faq = await Astro.glob("../pages/sections/faq/*.md*");
       margin-bottom: 2rem;
       height: max-content;
     }
-
   </style>
 </Layout>
