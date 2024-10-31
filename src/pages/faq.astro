@@ -26,20 +26,25 @@ const faq = await Astro.glob("../pages/sections/faq/*.md*");
     class="max-h-60 w-auto mx-auto self-center"
   />
   <!-- Mapping the following q and a to the comment above -->
-  <ul class="flex flex-col gap-4">
+  <ul class="flex flex-col gap-4 font-serif text-lg">
     {
       faq.map((post) => (
         <li class="flex flex-col gap-2 anchor">
           <a class="question" href={post.url} id="grooming-frequency">
             <h3
-              class="min-w-max !text-xl"
+              class="min-w-max"
               id={post.url.split("/").slice(-1)[0]}
-            >
-              Q: {post.frontmatter.title}
+        >
+          <span class="text-xl font-extrabold">
+              Q: 
+          </span>
+          <span>
+            {post.frontmatter.title}
+          </span>
             </h3>
           </a>
           <div class="flex gap-2">
-            <span class="text-xl">A:</span>
+            <span class="font-extrabold">A:</span>
             <div>
               <post.Content />
             </div>
@@ -75,28 +80,5 @@ const faq = await Astro.glob("../pages/sections/faq/*.md*");
       height: max-content;
     }
 
-    .answer::first-letter {
-      font-size: larger;
-      font-weight: bolder;
-    }
-
-    a {
-      font-size: larger;
-    }
-
-    a::before {
-      content: "";
-      width: 2em;
-      top: -18px;
-      position: absolute;
-      border-bottom: 2px black solid;
-      left: 0;
-      right: 0;
-      text-align: center;
-    }
-
-    a:first-of-type::before {
-      border-bottom: unset;
-    }
   </style>
 </Layout>

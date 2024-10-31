@@ -66,11 +66,14 @@ import * as pricingProcedure from "../pages/sections/packages/pricing_procedure.
   </div>
 
   <section class="flex flex-col items-center justify-center space-y-4">
-    <section class="accent flex space-x-3 text-left flex-col" id="grooming-packages-pricing-content">
+    <section class="accent flex space-x-3 text-left flex-col space-y-4" id="grooming-packages-pricing-content">
       <h3 class="col-span-2">{pricingProcedure.frontmatter.title}</h3>
-      <div class="flex flex-col flex-wrap md:flex-row justify-center content-between">
-        <div class="flex-1 flex-row flex-wrap mr-10">
+      <div class="flex flex-col flex-wrap md:flex-row justify-center content-between ">
+        <div class="flex-1 flex-row flex-wrap mr-10 space-y-2">
+          <span>
+
           {pricingProcedure.frontmatter.description}
+          </span>
           <pricingProcedure.Content/>
         </div>
         <img

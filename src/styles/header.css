@@ -11,11 +11,11 @@ article {
 }
 
 .outline-subtle { 
-  @apply outline outline-gray/10 outline-[1px]
+  @apply outline outline-gray-200/10 outline-[1px]
 }
 
 .border-subtle { 
-  @apply border-gray/10 
+  @apply border-gray-200/10 
 }
 
 nav {
@@ -139,6 +139,6 @@ nav > ul > li {
   .nav_link:hover,
   .nav_link:focus,
   .nav_link:active {
-    @apply text-gray;
+    @apply text-gray-500;
   }
 }

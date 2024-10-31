@@ -42,7 +42,7 @@ const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 		return (
 			<ul
 				class={
-					"flex bg-gray-dark sm:bg-transparent bg-opacity-80 sm:bg-opacity-100 absolute sm:relative pb-2 pl-2 top-12 sm:top-0 right-0 w-min lg:text-xl flex-col space-y-2 self-center text-right sm:flex-row md:w-full justify-end "
+					"flex bg-gray-800 sm:bg-transparent bg-opacity-80 sm:bg-opacity-100 absolute sm:relative pb-2 pl-2 top-12 sm:top-0 right-0 w-min lg:text-xl flex-col space-y-2 self-center text-right sm:flex-row md:w-full justify-end "
 				}
 			>
 				<li class={"hidden"} />
@@ -112,7 +112,10 @@ const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 					Directions
 				</a>
 
-				<div id={"nav-mobile"} class={"flex flex-col text-white sm:hidden"}>
+				<div
+					id={"nav-mobile"}
+					class={"flex flex-col text-white sm:hidden my-auto"}
+				>
 					<button
 						className={
 							"flex 2xl:hidden w-full flex-row items-end justify-end text-right sm:hidden"
