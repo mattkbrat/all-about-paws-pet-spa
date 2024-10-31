@@ -29,10 +29,6 @@ nav {
   z-index: 100;
 }
 
-nav a + a {
-  margin-left: 1rem;
-}
-
 nav:first-child {
   position: fixed;
   top: 0;
@@ -40,12 +36,6 @@ nav:first-child {
   z-index: 101;
 }
 
-nav > * {
-  /* Add space between items */
-  margin: 1rem;
-  position: relative;
-  z-index: 1001;
-}
 
 nav > ul {
   display: flex;
@@ -133,7 +123,7 @@ nav > ul > li {
 
 @layer components {
   .nav_link {
-    @apply decoration-0 px-2 py-0.5 lg:px-4 lg:text-xl;
+    @apply decoration-0 lg:text-xl;
   }
 
   .nav_link:hover,
