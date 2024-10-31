@@ -92,13 +92,13 @@ const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 
 				<div class={"flex flex-wrap-reverse xs:contents ml-auto"}>
 					<a
-						class="self-center mr-2 text-2xl uppercase leading-tight text-right my-auto lg:my-0 lg:mt-auto grid"
+						class="self-center mr-2 text-lg uppercase leading-tight text-right my-auto lg:my-0 lg:mt-auto grid"
 						href={GOOGLE_DIRECTION_URL}
 						target="_blank"
 						referrerpolicy={"no-referrer"}
 						rel="noreferrer"
 					>
-						<span class={"hidden lg:block"}>Get</span>
+						Get
 						<br />
 						Directions
 					</a>
