@@ -1,5 +1,4 @@
 ---
-
 import "react-image-gallery/styles/css/image-gallery.css";
 import * as indexSection from "../pages/sections/index.md";
 import * as regular from "../pages/sections/regular-bathing-grooming-benefits.md";
@@ -9,77 +8,73 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <style>
-.image-gallery-thumbnails-container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: max-content;
+  .image-gallery-thumbnails-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: max-content;
   }
 </style>
 
 <Layout title="All About Paws">
   <h2>All About Paws Pet Spa, LLC.</h2>
-  <Slideshow 
-    client:only={'preact'}
-  />
+  <!-- <Slideshow client:only={"preact"} /> -->
+  <hr class="hidden md:block" />
   <div
-    class="flex flex-col-reverse space-x-9 md:flex-row md:items-center md:justify-center md:space-x-0 md:space-y-4"
+    class="flex flex-col-reverse md:flex-row md:justify-center gap-x-8 gap-y-4"
   >
-    <article class="article">
-      <indexSection.Content/>
+    <article class="">
+      <indexSection.Content />
     </article>
 
     <aside
-      class="border-gray-200 mb-2 flex w-full
-                flex-row items-start justify-between space-y-0
-                border-b-2 md:mb-0 md:h-full md:w-auto md:flex-col md:space-y-6 md:border-b-0 md:border-l-2"
-      style={{ marginLeft: "0 !important" }}
+      class="border-gray-200 my-auto flex w-full space-y-2 flex-row items-start justify-between border-b-2 md:h-full md:w-auto md:flex-col md:border-b-0 md:border-l-2 text-blue-800 underline uppercase pl-2"
     >
       <a
+        class=""
         target="_blank"
         referrerpolicy={"no-referrer"}
-        class="text-accent nav_link w-fit content-center items-center text-md md:w-full md:text-lg"
-        href={import.meta.env.GOOGLE_REVIEWS_URL}
+        href={import.meta.env.GOOGLE_DIRECTION_URL}
       >
-        Reviews
+        Get Directions
       </a>
-      <a
-        target="_blank"
-        referrerpolicy={"no-referrer"}
-        class="text-accent nav_link w-fit content-center items-center text-center text-md md:w-full md:text-left md:text-lg"
-        href={import.meta.env.GOOGLE_WRITE_REVIEW}
-      >
-        Write a Review
-      </a>
-
-      <div
-        class="hidden h-px w-full border-b-2 border-dashed border-b-gray-dark md:block"
-      >
-        <br />
-      </div>
-
       <iframe
-        class="hidden md:block"
+        class="hidden md:block font-black"
         sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-modals"
         aria-label="Map, 16329 Co Rd V"
         src="https://maps-api-ssl.google.com/maps?hl=en&ll=40.305269,-103.844805&output=embed&q=16329+Co+Rd+V,+Fort+Morgan,+CO+80701,+USA+(16329+Co+Rd+V)&z=16"
         allowfullscreen=""></iframe>
-      <a
-        class="text-green-600 nav_link w-fit content-center items-center text-center text-md md:w-full md:text-left md:text-lg"
-        href={import.meta.env.GOOGLE_DIRECTION_URL}
-        target="_blank"
-        referrerpolicy={"no-referrer"}
-      >
-        Get Directions
-      </a>
+      <div class="md:flex flex-col gap-x-2 w-full contents">
+        <div class="md:flex flex-1 contents">
+          <a
+            class="md:flex-1"
+            target="_blank"
+            referrerpolicy={"no-referrer"}
+            href={import.meta.env.GOOGLE_REVIEWS_URL}
+          >
+            Reviews
+          </a>
+          <a
+            target="_blank"
+            referrerpolicy={"no-referrer"}
+            href={import.meta.env.GOOGLE_WRITE_REVIEW}
+          >
+            Write a Review
+          </a>
+        </div>
+      </div>
     </aside>
   </div>
 
-  <section>
-    <h3 class="font-display text-center uppercase">benefits of regular bathing &#38; Grooming</h3>
-    <div
-      class="grid grid-cols-5 mt-6 gap-4 lg:flex-row"
+  <hr />
+
+  <section class="space-y-2">
+    <h3
+      class="font-display text-center uppercase text-2xl underline underline-offset-2"
     >
+      benefits of regular bathing &#38; Grooming
+    </h3>
+    <div class="grid grid-cols-5 gap-4 lg:flex-row">
       <img
         class="w-auto h-auto my-auto"
         src="/assets/images/sitting_dog.png"
@@ -87,9 +82,9 @@ import Layout from "../layouts/Layout.astro";
         alt=""
       />
 
-        <article class="col-span-3">
-         <regular.Content/>
-        </article>
+      <article class="col-span-3">
+        <regular.Content />
+      </article>
 
       <img
         class="w-auto h-auto my-auto"
@@ -99,6 +94,4 @@ import Layout from "../layouts/Layout.astro";
       />
     </div>
   </section>
-
-  {/* Move above content to a table format */}
 </Layout>
