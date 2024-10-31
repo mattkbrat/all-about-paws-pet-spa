@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 
 const packages = await Astro.glob("../pages/sections/packages/package*.md");
 import * as basePackageInfo from "../pages/sections/all-packages.md";
-import * as felineInfo from "../pages/sections/packages/for_the_felines.md";
+// import * as felineInfo from "../pages/sections/packages/for_the_felines.md";
 import * as groomingPackages from "../pages/sections/packages/grooming_packages.md";
 import * as pricingProcedure from "../pages/sections/packages/pricing_procedure.md";
 ---
@@ -50,19 +50,6 @@ import * as pricingProcedure from "../pages/sections/packages/pricing_procedure.
 
   <div class="flex-wrap flex flex-row justify-between outline-subtle">
 
-  <section class="card ">
-      <h3 class="underline underline-offset-2 min-w-max">
-          {felineInfo.frontmatter.title}: {felineInfo.frontmatter.alt}
-      </h3>
-      <span >{felineInfo.frontmatter.description}</span>
-      <ul class="break-words"><felineInfo.Content/></ul>
-  </section>
-    <img
-      src="/assets/images/lazy_cat.png"
-      loading="lazy"
-      alt="Cat grooming"
-      width={400}
-    />
   </div>
 
   <section class="flex flex-col items-center justify-center space-y-4">
