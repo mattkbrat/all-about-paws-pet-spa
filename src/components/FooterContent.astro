@@ -1,0 +1,35 @@
+<section class="flex-1 flex-wrap">
+  <h3 class="font-bold">Hours</h3>
+  <table class="inline self-center">
+    <tr>
+      <td>M - F</td>
+      <td>7:00am - 4:00pm</td>
+    </tr>
+    <tr>
+      <td>Saturday</td>
+      <td>8:00am - 2:00pm</td>
+    </tr>
+    <tr>
+      <td>Sunday</td>
+      <td>Closed</td>
+    </tr>
+  </table>
+</section>
+<section class="flex-1 flex-wrap">
+  <h3 class="font-bold">Location</h3>
+  <p>16329 County Road V</p>
+  <p>Fort Morgan, CO</p>
+  <p>80701</p>
+</section>
+<section class="flex-1 flex-wrap">
+  <h3 class="font-bold">Contact</h3>
+  <a href=`tel:+${import.meta.env.PHONE.replace(/\D/g, '')}`>
+    Call me at {import.meta.env.PHONE}
+  </a>
+  <p>
+    {`Email: `}
+    <a href={"mailto:" + import.meta.env.CONTACT_EMAIL}>
+      {import.meta.env.CONTACT_EMAIL_SPACED}
+    </a>
+  </p>
+</section>
