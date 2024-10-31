@@ -1,69 +1,29 @@
-<footer class="pt-auto pb-0 flex footer justify-center">
-  <div class="flex justify-between px-4 align-middle flex-1 xl:max-w-[50dvw]">
-    {/* Google icon svg */}
-    <a href={import.meta.env.GOOGLE_PAGE} class="self-center">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-12"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-      >
- <g id="SVGRepo_bgCarrier" stroke-width="0"/>
- <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
- <g id="SVGRepo_iconCarrier"> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7399.000000)" fill="#000000"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M263.821537,7247.00386 L254.211298,7247.00386 C254.211298,7248.0033 254.211298,7250.00218 254.205172,7251.00161 L259.774046,7251.00161 C259.560644,7252.00105 258.804036,7253.40026 257.734984,7254.10487 C257.733963,7254.10387 257.732942,7254.11086 257.7309,7254.10986 C256.309581,7255.04834 254.43389,7255.26122 253.041161,7254.98137 C250.85813,7254.54762 249.130492,7252.96451 248.429023,7250.95364 C248.433107,7250.95064 248.43617,7250.92266 248.439233,7250.92066 C248.000176,7249.67336 248.000176,7248.0033 248.439233,7247.00386 L248.438212,7247.00386 C249.003881,7245.1669 250.783592,7243.49084 252.969687,7243.0321 C254.727956,7242.65931 256.71188,7243.06308 258.170978,7244.42831 C258.36498,7244.23842 260.856372,7241.80579 261.043226,7241.6079 C256.0584,7237.09344 248.076756,7238.68155 245.090149,7244.51127 L245.089128,7244.51127 C245.089128,7244.51127 245.090149,7244.51127 245.084023,7244.52226 L245.084023,7244.52226 C243.606545,7247.38565 243.667809,7250.75975 245.094233,7253.48622 C245.090149,7253.48921 245.087086,7253.49121 245.084023,7253.49421 C246.376687,7256.0028 248.729215,7257.92672 251.563684,7258.6593 C254.574796,7259.44886 258.406843,7258.90916 260.973794,7256.58747 C260.974815,7256.58847 260.975836,7256.58947 260.976857,7256.59047 C263.15172,7254.63157 264.505648,7251.29445 263.821537,7247.00386" id="google-[#178]"> </path> </g> </g> </g> </g>
-      </svg>
-    </a>
+---
+import InstagramProfile from "./links/InstagramProfile.astro";
+import GoogleProfile from "./links/GoogleProfile.astro";
+import FooterContent from "./FooterContent.astro";
+---
 
+<footer class="justify-center accent">
+  <!-- Standard Sizes -->
+  <div
+    class="justify-between px-4 align-middle flex-1 md:grid md:grid-cols-[1fr,auto,1fr] md:grid-rows-1"
+  >
+    <div class="mx-auto hidden md:block ml-16 md:mr-auto my-auto w-fit">
+      <GoogleProfile />
+    </div>
     <section
-      class="my-4 flex flex-1 flex-col place-content-between items-center space-y-6 text-center md:flex-row md:space-y-0"
+      class="my-4 flex flex-1 flex-col place-content-between items-center space-y-6 text-center md:flex-row md:space-y-0 max-w-6xl"
     >
-      <section class="flex-1 flex-wrap">
-        <h3>Hours</h3>
-        <table class="inline self-center">
-          <tr>
-            <td>M - F</td>
-            <td>7:00am - 4:00pm</td>
-          </tr>
-          <tr>
-            <td>Saturday</td>
-            <td>8:00am - 2:00pm</td>
-          </tr>
-          <tr>
-            <td>Sunday</td>
-            <td>Closed</td>
-          </tr>
-        </table>
-      </section>
-      <section class="flex-1 flex-wrap ">
-        <h3>Location</h3>
-        <p>16329 County Road V</p>
-        <p>Fort Morgan, CO</p>
-        <p>80701</p>
-      </section>
-      <section class="flex-1 flex-wrap">
-        <h3>Contact</h3>
-        <a href=`tel:+${import.meta.env.PHONE.replace(/\D/g, '')}`>
-          Call me at {import.meta.env.PHONE}
-        </a>
-        <p>
-          {`Email: `}
-          <a href={"mailto:" + import.meta.env.CONTACT_EMAIL}>
-            {import.meta.env.CONTACT_EMAIL_SPACED}
-          </a>
-        </p>
-      </section>
+      <FooterContent />
     </section>
-    {/* Instagram */}
-    <a class="self-center" href={import.meta.env.INSTAGRAM}>
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-12" viewBox="0 0 24 24">
-      
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#0F0F0F"/>
-<path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#0F0F0F"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#0F0F0F"/>
-      </svg>
-    </a>
+    <div class="mx-auto md:mr-16 sm:ml-auto my-auto flex w-fit">
+      <InstagramProfile />
+      <div class="md:hidden">
+        <GoogleProfile />
+      </div>
+    </div>
   </div>
-
 </footer>
 
 <style>

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "preact/compat";
+import React, { useEffect, useMemo, useState } from "preact/compat";
 
 import "../styles/header.css";
+import { NavLinks } from "./NavLinks";
 
 const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -38,109 +39,102 @@ const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 		}
 	}, [scrolled]);
 
+	const selected = useMemo(() => {
+		return route === "/"
+			? "home"
+			: route.startsWith("/packages")
+				? "packages"
+				: "faq";
+	}, [route]);
+
 	const Nav = () => {
 		return (
-			<ul
-				class={
-					"flex bg-gray-dark sm:bg-transparent bg-opacity-80 sm:bg-opacity-100 absolute sm:relative pb-2 pl-2 top-12 sm:top-0 right-0 w-min lg:text-xl flex-col space-y-2 self-center text-right sm:flex-row md:w-full justify-end "
-				}
-			>
-				<li class={"hidden"} />
-				<li
-					id="home"
-					class={`nav_link sm:w-auto ${
-						route === "/" ? "active" : "not-active"
-					}`}
+			<>
+				<ul
+					class={"grid-cols-3 gap-x-0 flex-1 border-b-2 hidden lg:grid text-xl"}
 				>
-					<a href="/" class="nav_link">
-						Home
-					</a>
-				</li>
-
-				<li
-					id="packages"
-					class={`nav_link h-full w-full sm:w-auto ${
-						route.startsWith("/packages") ? "active" : "not-active"
-					}`}
+					<NavLinks selected={selected} />
+				</ul>
+				<ul
+					class={
+						"flex lg:hidden lg:px-4 grid-cols-3 gap-x-0 flex-1 border-b-2  flex-col bg-gray-800 absolute top-16 right-6 text-right "
+					}
 				>
-					<a href="/packages">Packages</a>
-				</li>
-				<li
-					id="faq"
-					class={`nav_link h-full w-full sm:w-auto ${
-						route.includes("faq") ? "active" : "not-active"
-					}`}
-				>
-					<a href="/faq" class="nav_link">
-						FAQ
-					</a>
-				</li>
-			</ul>
+					<NavLinks selected={selected} />
+				</ul>
+			</>
 		);
 	};
 
 	return (
-		<div class="sticky flex mb-auto flex-row z-50">
-			<nav id="main_nav" class={"w-full"}>
-				<a href="/" class="flex w-full mb-auto">
+		<div class="sticky flex flex-row z-50 text-lg  lg:text-left md:text-current ">
+			<nav id="main_nav" class={"font-bold px-4 w-full"}>
+				<a href="/" class="flex py-4 mr-auto">
 					<img
 						src="/assets/images/aap_favicon.png"
 						alt="Logo"
 						class={"logo h-12 w-12"}
 					/>
-					<div class={"w-full"}>
-						<h1 class={"w-full"}>All About Paws Pet Spa, LLC.</h1>
-						<p class="w-full text-sm font-light">Fort Morgan Grooming</p>
+					<div class={""}>
+						<h1>All About Paws Pet Spa, LLC.</h1>
+						<p class="text-sm font-light">Fort Morgan Grooming</p>
 					</div>
 				</a>
 
 				<div
 					class={
-						"hidden content-center items-end text-center sm:flex sm:w-full relative"
+						"hidden lg:flex content-center items-end text-center w-full relative max-w-[50dvw] "
 					}
 				>
 					<Nav />
 				</div>
+				<div class={"flex lg:hidden  "}>{menuOpen && <Nav />}</div>
 
-				<a
-					class="nav_link self-center text-right"
-					href={GOOGLE_DIRECTION_URL}
-					target="_blank"
-					referrerpolicy={"no-referrer"}
-					rel="noreferrer"
-				>
-					Directions
-				</a>
-
-				<div id={"nav-mobile"} class={"flex flex-col text-white sm:hidden"}>
-					<button
-						className={
-							"flex 2xl:hidden w-full flex-row items-end justify-end text-right sm:hidden"
-						}
-						onClick={() => setMenuOpen(!menuOpen)}
-						type="button"
+				<div class={"flex flex-wrap-reverse xs:contents ml-auto"}>
+					<a
+						class="self-center mr-2 text-lg uppercase leading-tight text-right my-auto lg:my-0 lg:mt-auto grid"
+						href={GOOGLE_DIRECTION_URL}
+						target="_blank"
+						referrerpolicy={"no-referrer"}
+						rel="noreferrer"
 					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="icon icon-tabler icon-tabler-menu-2"
-							width="44"
-							height="44"
-							viewBox="0 0 24 24"
-							stroke-width="1.5"
-							stroke={menuOpen ? "white" : "black"}
-							fill="none"
-							stroke-linecap="round"
-							stroke-linejoin="round"
+						Get
+						<br />
+						Directions
+					</a>
+					<div
+						id={"nav-mobile"}
+						class={"flex flex-col text-white my-auto lg:hidden "}
+					>
+						<button
+							className={
+								"flex lg:hidden w-full flex-row items-end justify-end text-right"
+							}
+							onClick={() => setMenuOpen(!menuOpen)}
+							type="button"
 						>
-							<title>Nav Menu Toggle</title>
-							<path stroke="none" d="M0 0h24v24H0z" />
-							<line x1="4" y1="6" x2="20" y2="6" />
-							<line x1="4" y1="12" x2="20" y2="12" />
-							<line x1="4" y1="18" x2="20" y2="18" />
-						</svg>
-					</button>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="icon icon-tabler icon-tabler-menu-2"
+								width="44"
+								height="44"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke={menuOpen ? "gray" : "black"}
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<title>Nav Menu Toggle</title>
+								<path stroke="none" d="M0 0h24v24H0z" />
+								<line x1="4" y1="6" x2="20" y2="6" />
+								<line x1="4" y1="12" x2="20" y2="12" />
+								<line x1="4" y1="18" x2="20" y2="18" />
+							</svg>
+						</button>
 
-					{menuOpen && <Nav />}
+						{menuOpen && <Nav />}
+					</div>
 				</div>
 			</nav>
 		</div>
