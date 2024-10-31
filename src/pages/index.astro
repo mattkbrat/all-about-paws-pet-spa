@@ -68,15 +68,15 @@ import Layout from "../layouts/Layout.astro";
 
   <hr />
 
-  <section class="space-y-2">
+  <section class="space-y-2 text-center lg:text-left">
     <h3
-      class="font-display text-center uppercase text-2xl underline underline-offset-2"
+      class="font-display uppercase text-2xl underline underline-offset-2 items-center"
     >
       benefits of regular bathing &#38; Grooming
     </h3>
-    <div class="grid grid-cols-5 gap-4 lg:flex-row">
+    <div class="flex flex-col lg:grid lg:grid-cols-5 gap-4 justify-center">
       <img
-        class="w-auto h-auto my-auto"
+        class="w-auto h-auto my-auto max-h-40 self-center"
         src="/assets/images/sitting_dog.png"
         loading="lazy"
         alt=""
@@ -87,7 +87,7 @@ import Layout from "../layouts/Layout.astro";
       </article>
 
       <img
-        class="w-auto h-auto my-auto"
+        class="w-auto h-auto my-auto max-h-40 self-center"
         src="/assets/images/sitting_cat.png"
         loading="lazy"
         alt=""
