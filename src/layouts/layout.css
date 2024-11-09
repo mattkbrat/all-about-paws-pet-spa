@@ -30,6 +30,12 @@
 	}
 }
 
+@layer components {
+	.link {
+		@apply underline text-blue-600 hover:text-blue-800
+	}
+}
+
 :root {
 	--accent: 124, 58, 237;
 	--accent-gradient: linear-gradient(
