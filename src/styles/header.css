@@ -1,21 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 article {
   @apply flex flex-col gap-4;
 }
 
 .card {
- @apply flex flex-col p-4 gap-y-2; 
+  @apply flex flex-col p-4 gap-y-2;
 }
 
-.outline-subtle { 
+.outline-subtle {
   @apply outline outline-gray-200/10 outline-[1px]
 }
 
-.border-subtle { 
-  @apply border-gray-200/10 
+.border-subtle {
+  @apply border-gray-200/10
 }
 
 nav {
@@ -37,7 +35,7 @@ nav:first-child {
 }
 
 
-nav > ul {
+nav>ul {
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -45,7 +43,7 @@ nav > ul {
   justify-content: flex-end;
 }
 
-nav > ul > li {
+nav>ul>li {
   list-style: none;
   font-size: 1rem;
   padding: 0.5rem;
@@ -55,7 +53,7 @@ nav > ul > li {
   display: none;
 }
 
-.menu-toggle:checked + ul {
+.menu-toggle:checked+ul {
   display: flex;
 }
 
@@ -97,14 +95,14 @@ nav > ul > li {
 }
 
 @media (max-width: 600px) {
-  nav > ul {
+  nav>ul {
     flex-direction: column;
     gap: 0.5rem;
     align-items: center;
     justify-content: center;
   }
 
-  nav > ul > li {
+  nav>ul>li {
     list-style: none;
     font-size: 1rem;
     padding: 0.5rem;

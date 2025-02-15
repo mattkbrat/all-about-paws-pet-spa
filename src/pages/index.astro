@@ -7,15 +7,6 @@ import Slideshow from "../components/Slides";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<style>
-  .image-gallery-thumbnails-container {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: max-content;
-  }
-</style>
-
 <Layout title="All About Paws">
   <h2>All About Paws Pet Spa, LLC.</h2>
   <Slideshow client:only={"preact"} />
@@ -28,7 +19,7 @@ import Layout from "../layouts/Layout.astro";
     </article>
 
     <aside
-      class="border-gray-200 my-auto flex w-full space-y-2 flex-row items-start justify-between border-b-2 md:h-full md:w-auto md:flex-col md:border-b-0 md:border-l-2 text-blue-800 underline uppercase pl-2"
+      class="border-gray-200 my-auto flex w-full space-y-2 flex-row items-start justify-between border-b-2 md:h-full md:w-auto md:flex-col md:border-b-0 md:border-l-2 text-blue-800 underline uppercase pl-2 flex-wrap"
     >
       <a
         class=""
