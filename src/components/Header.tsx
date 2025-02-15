@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useRef, useState } from "preact/compat";
 import "../styles/header.css";
 import { NavLinks } from "./NavLinks";
 
-const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
+const Header = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const menuElement = useRef<HTMLDivElement>(null);
 
@@ -14,8 +14,7 @@ const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 	useEffect(() => {
 		if (typeof window === "undefined") return;
 		setRoute(window.location.pathname);
-		console.log({ route });
-	}, [route]);
+	}, []);
 
 	useEffect(() => {
 		if (typeof window === "undefined") return;
@@ -25,8 +24,8 @@ const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 		window.addEventListener("scroll", getHasScrolled);
 
 		window.addEventListener("click", (e) => {
+			if (!(e.target instanceof Node)) return;
 			if (!menuElement.current?.contains(e.target)) {
-				console.log("Not open");
 				setMenuOpen(false);
 			}
 		});

@@ -2,9 +2,9 @@
 const { GOOGLE_DIRECTION_URL } = import.meta.env;
 ---
 
-<section class="flex-1 flex-wrap items-start">
+<section class="flex-1 flex-wrap items-start min-w-max">
   <h3 class="font-bold text-lg underline">Hours</h3>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:gap-y-2">
+  <div class="grid grid-cols-1 sm:grid-cols-[auto_1fr] md:gap-y-2 gap-x-2">
     <span class="font-bold">M - F</span>
     <span>7:00am - 4:00pm</span>
     <span class="font-bold">Saturday</span>
@@ -13,7 +13,7 @@ const { GOOGLE_DIRECTION_URL } = import.meta.env;
     <span>Closed</span>
   </div>
 </section>
-<section class="flex-1 flex-wrap">
+<section class="flex-1 flex-wrap min-w-max ">
   <h3 class="font-bold text-lg underline">Location</h3>
       <span class="w-max">
         <span>16329 County Road V,</span>
