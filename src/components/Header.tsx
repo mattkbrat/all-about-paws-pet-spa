@@ -1,10 +1,11 @@
-import React, { useEffect, useMemo, useState } from "preact/compat";
+import React, { useEffect, useMemo, useRef, useState } from "preact/compat";
 
 import "../styles/header.css";
 import { NavLinks } from "./NavLinks";
 
 const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 	const [menuOpen, setMenuOpen] = useState(false);
+	const menuElement = useRef<HTMLDivElement>(null);
 
 	const [route, setRoute] = useState("/");
 
@@ -22,6 +23,13 @@ const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 		const getHasScrolled = () => setScrolled(window.scrollY > 50);
 
 		window.addEventListener("scroll", getHasScrolled);
+
+		window.addEventListener("click", (e) => {
+			if (!menuElement.current?.contains(e.target)) {
+				console.log("Not open");
+				setMenuOpen(false);
+			}
+		});
 
 		return () => {
 			window.removeEventListener("scroll", getHasScrolled);
@@ -67,9 +75,9 @@ const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 	};
 
 	return (
-		<div class="sticky flex flex-row z-50 text-lg  lg:text-left md:text-current ">
+		<div class="sticky flex flex-row z-50 text-lg  lg:text-left md:text-current transition-all">
 			<nav id="main_nav" class={"font-bold px-4 w-full"}>
-				<a href="/" class="flex py-4 mr-auto">
+				<a href="/" class="flex py-4 mr-auto flex-1">
 					<img
 						src="/assets/images/aap_favicon.png"
 						alt="Logo"
@@ -83,14 +91,19 @@ const Header = ({ GOOGLE_DIRECTION_URL }: { GOOGLE_DIRECTION_URL: string }) => {
 
 				<div
 					class={
-						"hidden lg:flex content-center items-end text-center w-full relative max-w-[50dvw] "
+						"hidden lg:flex content-center items-end text-center w-full relative max-w-[40rem] "
 					}
 				>
 					<Nav />
 				</div>
 				<div class={"flex lg:hidden  "}>{menuOpen && <Nav />}</div>
 
-				<div class={"flex flex-wrap-reverse xs:contents ml-auto"}>
+				<div
+					class={"flex flex-wrap-reverse xs:contents ml-auto"}
+					onMouseEnter={() => setMenuOpen(true)}
+					onMouseLeave={() => setMenuOpen(false)}
+					ref={menuElement}
+				>
 					<div
 						id={"nav-mobile"}
 						class={"flex flex-col text-white my-auto lg:hidden "}
