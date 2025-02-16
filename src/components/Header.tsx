@@ -1,4 +1,10 @@
-import React, { useEffect, useMemo, useRef, useState } from "preact/compat";
+import React, {
+	useCallback,
+	useEffect,
+	useMemo,
+	useRef,
+	useState,
+} from "preact/compat";
 
 import "../styles/header.css";
 import { NavLinks } from "./NavLinks";
@@ -23,16 +29,16 @@ const Header = () => {
 
 		window.addEventListener("scroll", getHasScrolled);
 
-		window.addEventListener("click", (e) => {
-			if (!(e.target instanceof Node)) return;
-			if (!menuElement.current?.contains(e.target)) {
-				setMenuOpen(false);
-			}
-		});
-
 		return () => {
 			window.removeEventListener("scroll", getHasScrolled);
 		};
+	}, []);
+
+	const handleClickOutside = useCallback((e: { target: unknown }) => {
+		if (!(e.target instanceof Node)) return;
+		if (!menuElement.current?.contains(e.target)) {
+			setMenuOpen(false);
+		}
 	}, []);
 
 	useEffect(() => {
@@ -53,6 +59,14 @@ const Header = () => {
 				? "packages"
 				: "faq";
 	}, [route]);
+
+	useEffect(() => {
+		if (!menuOpen) {
+			window.removeEventListener("click", handleClickOutside);
+			return;
+		}
+		window.addEventListener("click", handleClickOutside);
+	}, [menuOpen, handleClickOutside]);
 
 	const Nav = () => {
 		return (
