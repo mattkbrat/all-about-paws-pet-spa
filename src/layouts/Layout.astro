@@ -11,6 +11,7 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header";
 import Hero from "../components/Hero.astro";
 import Root from "./Root.astro";
+import { GOOGLE_DIRECTION_URL } from "../constants";
 ---
 
 <Root title={title}>
@@ -18,7 +19,6 @@ import Root from "./Root.astro";
     <!--<Navigation/>-->
     <Hero />
     <Header
-      GOOGLE_DIRECTION_URL={import.meta.env.GOOGLE_DIRECTION_URL}
       client:visible
     />
     <main class="flex justify-center 2xl:text-xl items-start flex-1">
