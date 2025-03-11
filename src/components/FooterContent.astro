@@ -1,5 +1,10 @@
 ---
-const { GOOGLE_DIRECTION_URL } = import.meta.env;
+import {
+	CONTACT_EMAIL,
+	GOOGLE_DIRECTION_URL,
+	PHONE,
+	PHONE_FULL,
+} from "../constants";
 ---
 
 <section class="flex-1 flex-wrap items-start min-w-max">
@@ -35,18 +40,17 @@ const { GOOGLE_DIRECTION_URL } = import.meta.env;
 <section class="flex-1 flex-wrap">
   <h3 class="font-bold text-lg underline">Contact</h3>
   <a
-    href=`tel:+${import.meta.env.PHONE.replace(/\D/g, '')}`
+    href=`tel:+${PHONE_FULL}`
     class="flex flex-wrap gap-x-1 "
   >
     <span>Call me at</span>
     <span class="link w-max">
-      {import.meta.env.PHONE}
+      {PHONE}
     </span>
   </a>
   <p>
-    <a class="link" href={"mailto:" + import.meta.env.CONTACT_EMAIL}>
+    <a class="link" href={"mailto:" + CONTACT_EMAIL}>
       Email
-      <!-- {import.meta.env.CONTACT_EMAIL_SPACED} -->
     </a>
   </p>
 </section>
