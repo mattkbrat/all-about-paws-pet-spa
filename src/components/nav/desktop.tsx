@@ -11,7 +11,7 @@ export const DesktopNav = ({ route }: { route: string }) => {
 			}}
 		>
 			{Object.entries(navItems).map(([k, v]) => {
-				const isSelected = v === route;
+				const isSelected = v === "/" ? route === "/" : route.startsWith(v);
 				return (
 					<a
 						href={v}
