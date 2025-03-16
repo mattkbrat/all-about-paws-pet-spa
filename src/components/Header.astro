@@ -12,6 +12,8 @@ const route = Astro.url;
         <h1 class="break-words">All About Paws Pet Spa, LLC.</h1>
         <p class="text-sm font-light">Fort Morgan Grooming</p>
       </div>
-    </a>
-    <Nav client:visible route={route.pathname} />
-  </nav>
+  </a>
+  <div class="relative lg:self-end">
+  <Nav route={route.pathname} client:visible />
+  </div>
+  </nav> 

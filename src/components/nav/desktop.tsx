@@ -3,7 +3,13 @@ import { navItems } from "./items";
 
 export const DesktopNav = ({ route }: { route: string }) => {
 	return (
-		<ul className="flex items-end flex-wrap">
+		<ul
+			className="flex items-end flex-wrap flex-col lg:flex-row lg:bg-transparent bg-white lg:!flex ease-in-out overflow-clip duration-150 max-h-0 lg:outline-transparent lg:max-h-fit"
+			id="nav-items"
+			style={{
+				transitionProperty: "max-height",
+			}}
+		>
 			{Object.entries(navItems).map(([k, v]) => {
 				const isSelected = v === route;
 				return (
@@ -11,7 +17,7 @@ export const DesktopNav = ({ route }: { route: string }) => {
 						href={v}
 						key={k}
 						className={clsx(
-							"flex-1 min-w-25 w-max text-center px-4 pb-1 border-b-2",
+							"flex-1 min-w-25 w-full lg:w-max text-right lg:text-center py-4 lg:py-0 px-4 lg:pb-1 lg:border-b-2 ",
 							isSelected
 								? "bg-gray-900 text-white border-b-transparent"
 								: "border-b-black hover:bg-gray-900/25 ",
