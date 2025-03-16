@@ -29,7 +29,7 @@ const MyGallery = () => {
 			responsive={responsive}
 			infinite={true}
 			autoPlay
-			autoPlaySpeed={1300}
+			autoPlaySpeed={3000}
 			removeArrowOnDeviceType={["tablet", "mobile"]}
 			className="max-w-[90dvw]"
 		>
