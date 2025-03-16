@@ -1,0 +1,19 @@
+---
+import Logo from "./logo.astro";
+import { Nav } from "./Nav";
+
+const route = Astro.url;
+---
+
+<nav id="main_nav" class={"font-bold px-4 w-full sticky flex flex-row z-50 text-lg lg:text-left md:text-current transition-all top-0 bg-black/10"}>
+    <a href="/" class="flex py-4 mr-auto flex-1 gap-x-2">
+       <Logo /> 
+    <div class="min-w-max  text-wrap">
+        <h1 class="break-words max-w-[60dvw] ">All About Paws Pet Spa, LLC.</h1>
+        <p class="text-sm font-light">Fort Morgan Grooming</p>
+      </div>
+  </a>
+  <div class="relative lg:self-end">
+    <Nav route={route.pathname} client:visible />
+  </div>
+</nav> 

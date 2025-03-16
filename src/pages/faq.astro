@@ -29,9 +29,9 @@ const faq = await Astro.glob("../pages/sections/faq/*.md*");
   <ul class="flex flex-col gap-4 font-serif text-lg">
     {
       faq.map((post) => (
-        <li class="flex flex-col gap-2 anchor">
-          <a class="question" href={post.url} id="grooming-frequency">
-            <h3 class="min-w-max" id={post.url.split("/").slice(-1)[0]}>
+        <li class="flex flex-col gap-2">
+          <a href={post.url}>
+            <h3 class="flex gap-2" id={post.url.split("/").slice(-1)[0]}>
               <span class="text-xl font-extrabold">Q:</span>
               <span>{post.frontmatter.title}</span>
             </h3>
@@ -47,7 +47,7 @@ const faq = await Astro.glob("../pages/sections/faq/*.md*");
       ))
     }
   </ul>
-  <div class="images grid grid-cols-2 items-center">
+  <div class="flex flex-wrap items-center">
     <img
       src="/assets/images/sitting_dog_2.jpg"
       loading="lazy"
