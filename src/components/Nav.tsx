@@ -1,159 +1,19 @@
-import React, {
-	useCallback,
-	useEffect,
-	useMemo,
-	useRef,
-	useState,
-} from "preact/compat";
-
 import "../styles/header.css";
-import { NavLinks } from "./NavLinks";
+import { useScroll } from "./nav/use-scroll";
+import { DesktopNav } from "./nav/desktop";
+import { MobileNav } from "./nav/mobile";
 
-const Header = () => {
-	const [menuOpen, setMenuOpen] = useState(false);
-	const menuElement = useRef<HTMLDivElement>(null);
-
-	const [route, setRoute] = useState("/");
-
-	const [scrolled, setScrolled] = useState(false);
-
-	useEffect(() => {
-		if (typeof window === "undefined") return;
-		setRoute(window.location.pathname);
-	}, []);
-
-	useEffect(() => {
-		if (typeof window === "undefined") return;
-
-		const getHasScrolled = () => setScrolled(window.scrollY > 50);
-
-		window.addEventListener("scroll", getHasScrolled);
-
-		return () => {
-			window.removeEventListener("scroll", getHasScrolled);
-		};
-	}, []);
-
-	const handleClickOutside = useCallback((e: { target: unknown }) => {
-		if (!(e.target instanceof Node)) return;
-		if (!menuElement.current?.contains(e.target)) {
-			setMenuOpen(false);
-		}
-	}, []);
-
-	useEffect(() => {
-		const nav = document.getElementById("main_nav");
-		if (scrolled) {
-			if (!nav || nav.classList.contains("nav_scrolled")) return;
-			nav.classList.add("nav_scrolled");
-		} else {
-			if (!nav || !nav.classList.contains("nav_scrolled")) return;
-			nav.classList.remove("nav_scrolled");
-		}
-	}, [scrolled]);
-
-	const selected = useMemo(() => {
-		return route === "/"
-			? "home"
-			: route.startsWith("/packages")
-				? "packages"
-				: "faq";
-	}, [route]);
-
-	useEffect(() => {
-		if (!menuOpen) {
-			window.removeEventListener("click", handleClickOutside);
-			return;
-		}
-		window.addEventListener("click", handleClickOutside);
-	}, [menuOpen, handleClickOutside]);
-
-	const Nav = () => {
-		return (
-			<>
-				<ul
-					class={"grid-cols-3 gap-x-0 flex-1 border-b-2 hidden lg:grid text-xl"}
-				>
-					<NavLinks selected={selected} />
-				</ul>
-				<ul
-					class={
-						"flex lg:hidden lg:px-4 grid-cols-3 gap-x-0 flex-1 border-b-2  flex-col bg-gray-800 absolute top-16 right-6 text-right "
-					}
-				>
-					<NavLinks selected={selected} />
-				</ul>
-			</>
-		);
-	};
+export const Nav = ({ route }: { route: string }) => {
+	useScroll();
 
 	return (
-		<div class="sticky flex flex-row z-50 text-lg  lg:text-left md:text-current transition-all">
-			<nav id="main_nav" class={"font-bold px-4 w-full"}>
-				<a href="/" class="flex py-4 mr-auto flex-1">
-					<img
-						src="/assets/images/aap_favicon.png"
-						alt="Logo"
-						class={"logo h-12 w-12"}
-					/>
-					<div class={""}>
-						<h1>All About Paws Pet Spa, LLC.</h1>
-						<p class="text-sm font-light">Fort Morgan Grooming</p>
-					</div>
-				</a>
-
-				<div
-					class={
-						"hidden lg:flex content-center items-end text-center w-full relative max-w-[40rem] "
-					}
-				>
-					<Nav />
-				</div>
-				<div class={"flex lg:hidden  "}>{menuOpen && <Nav />}</div>
-
-				<div
-					class={"flex flex-wrap-reverse xs:contents ml-auto"}
-					onMouseEnter={() => setMenuOpen(true)}
-					onMouseLeave={() => setMenuOpen(false)}
-					ref={menuElement}
-				>
-					<div
-						id={"nav-mobile"}
-						class={"flex flex-col text-white my-auto lg:hidden "}
-					>
-						<button
-							className={
-								"flex lg:hidden w-full flex-row items-end justify-end text-right"
-							}
-							onClick={() => setMenuOpen(!menuOpen)}
-							type="button"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="icon icon-tabler icon-tabler-menu-2"
-								width="44"
-								height="44"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke={menuOpen ? "gray" : "black"}
-								fill="none"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							>
-								<title>Nav Menu Toggle</title>
-								<path stroke="none" d="M0 0h24v24H0z" />
-								<line x1="4" y1="6" x2="20" y2="6" />
-								<line x1="4" y1="12" x2="20" y2="12" />
-								<line x1="4" y1="18" x2="20" y2="18" />
-							</svg>
-						</button>
-
-						{menuOpen && <Nav />}
-					</div>
-				</div>
-			</nav>
-		</div>
+		<>
+			<div className="lg:flex hidden">
+				<DesktopNav route={route} />
+			</div>
+			<div className="flex lg:hidden">
+				<MobileNav route={route} />
+			</div>
+		</>
 	);
 };
-
-export default Header;
