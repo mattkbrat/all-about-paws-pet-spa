@@ -1,11 +1,11 @@
 ---
 import Logo from "./logo.astro";
-import { Nav } from "./Nav.tsx";
+import { Nav } from "./Nav";
 
 const route = Astro.url;
 ---
 
-  <nav id="main_nav" class={"font-bold px-4 w-full sticky flex flex-row z-50 text-lg lg:text-left md:text-current transition-all lg:sticky lg:top-0"}>
+<nav id="main_nav" class={"font-bold px-4 w-full sticky flex flex-row z-50 text-lg lg:text-left md:text-current transition-all top-0 bg-black/10"}>
     <a href="/" class="flex py-4 mr-auto flex-1 gap-x-2">
        <Logo /> 
     <div class="min-w-max  text-wrap">
