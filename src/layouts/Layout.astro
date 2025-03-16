@@ -10,11 +10,13 @@ const { title } = Astro.props;
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Root from "./Root.astro";
+import Hero from "../components/Hero.astro";
 ---
 
 <Root title={title}>
   <div class="flex flex-col min-h-screen justify-between relative">
     <Header />
+    <Hero/>
     <main class="flex justify-center 2xl:text-xl items-start flex-1 w-screen">
       <div id="main" class="max-w-6xl flex flex-col gap-4 self-center overflow-x-clip">
         <slot />

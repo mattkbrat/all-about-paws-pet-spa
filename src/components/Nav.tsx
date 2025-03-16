@@ -6,11 +6,7 @@ export const Nav = ({ route }: { route: string }) => {
 	useScroll();
 
 	return (
-		<div
-			className={
-				"grid absolute lg:relative top-4 lg:top-0 right-0 h-full text-center"
-			}
-		>
+		<div className={"grid absolute lg:relative right-0 h-full text-center"}>
 			<MobileNav />
 			<DesktopNav route={route} />
 		</div>
