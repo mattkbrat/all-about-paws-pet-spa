@@ -8,15 +8,15 @@ export interface Props {
 const { title } = Astro.props;
 
 import Footer from "../components/Footer.astro";
-import Header from "../components/Header";
+import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import Root from "./Root.astro";
 import { GOOGLE_DIRECTION_URL } from "../constants";
 ---
 
 <Root title={title}>
-  <div class="flex flex-col min-h-screen justify-between">
-    <!--<Navigation/>-->
+  <div class="flex flex-col min-h-screen justify-between relative">
+    <Header />
     <Hero />
     <Header
       client:visible

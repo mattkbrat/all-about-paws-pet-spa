@@ -1,3 +1,5 @@
+import React from "preact/compat";
+
 export const NavLinks = ({
 	selected,
 }: { selected: "home" | "packages" | "faq" }) => {
