@@ -31,11 +31,11 @@ const MyGallery = () => {
 			autoPlay
 			autoPlaySpeed={3000}
 			removeArrowOnDeviceType={["tablet", "mobile"]}
-			className="max-w-[90dvw]"
+			className="max-w-[85dvw]"
 		>
 			{originals.map((i) => {
 				return (
-					<div key={i} id={"image"}>
+					<div key={i} id={"image"} className={"w-fit mx-auto"}>
 						<img
 							src={i}
 							alt={""}
